@@ -1,0 +1,69 @@
+{
+    "individuals": {
+        "person0": {
+            "reporterId": "$rootScope.uid",
+            "firstName": "Matthias",
+            "lastName": "Ward",
+            "age": 12,
+            "gender": "male",
+            "race": "biracial",
+            "notes": "Matthias is a biracial male who is being talked about and taunted by his classmates."
+        },
+        "person1": {
+            "reporterId": "$rootScope.uid",
+            "firstName": "Maximus",
+            "lastName": "Ward",
+            "age": 15,
+            "gender": "male",
+            "race": "biracial",
+            "notes": "Maximus is a biracial male who is being phsyically assaulted by another male."
+        },
+        "person2": {
+            "reporterId": "$rootScope.uid",
+            "firstName": "Eleanor",
+            "lastName": "Stoops",
+            "age": 9,
+            "gender": "female",
+            "race": "caucasian",
+            "notes": "Eleanor is sending inappropriate videos via text to friends and sharing them on social media also. She is targeting a certain individual."
+        },
+        "person1": {
+            "reporterId": "$rootScope.uid",
+            "firstName": "Sue",
+            "lastName": "Smith",
+            "age": 17,
+            "gender": "female",
+            "race": "african_american",
+            "notes": "Sue is a black female who verbally and physically abuses her two younger brothers and one older sister."
+        }
+    },
+    "incidents": {
+        "incident0": {
+            "personID": "person0",
+            "type": "verbal",
+            "date": "12-1-17",
+            "time": "1:00",
+            "description": "Matthias's friends called him a baby.",
+            "actionTaken": "reported to principal",
+            "actionNotes": "I called Mr. Penner on 12-1-17 to inform him of what happened. He said he would move the other kid to a different class."
+        },
+        "incident1": {
+            "personID": "person1",
+            "type": "physical",
+            "date": "12-1-17",
+            "time": "1:01",
+            "description": "Maximus was hit with a bat at the park.",
+            "actionTaken": "reported to police",
+            "actionNotes": "A police report was completed."
+        },
+        "incident2": {
+            "personID": "person0",
+            "type": "cyber",
+            "date": "12-1-17",
+            "time": "1:02",
+            "description": "The bully created an inappropriate photo with Maximus's face overlayed on it. He shared it on social media and sent it to the entire student body at school.",
+            "actionTaken": "reported to police",
+            "actionNotes": "The officer said there was nothing they could do about this."
+        }
+    }
+}
