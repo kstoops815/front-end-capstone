@@ -1,7 +1,7 @@
 {
     "individuals": {
-        "person0": {
-            "reporterId": "$rootScope.uid",
+        "individual0": {
+            "reporterId": "12345",
             "firstName": "Matthias",
             "lastName": "Ward",
             "age": 12,
@@ -9,61 +9,67 @@
             "race": "biracial",
             "notes": "Matthias is a biracial male who is being talked about and taunted by his classmates."
         },
-        "person1": {
-            "reporterId": "$rootScope.uid",
+        "individual1": {
+            "reporterId": "12345",
+            "firstName": "Sue",
+            "lastName": "Smith",
+            "age": 13,
+            "gender": "female",
+            "race": "african_american",
+            "notes": "Sue is a black female who is verbally abusing Matthias."
+        },
+        "individual2": {
+            "reporterId": "12345",
+            "firstName": "Kendrick",
+            "lastName": "Butthole",
+            "age": 16,
+            "gender": "male",
+            "race": "african_american",
+            "notes": "Kendrick has been phsyically abusing Maximus at school."
+        },
+        "individual3": {
+            "reporterId": "12345",
             "firstName": "Maximus",
             "lastName": "Ward",
             "age": 15,
             "gender": "male",
             "race": "biracial",
             "notes": "Maximus is a biracial male who is being phsyically assaulted by another male."
-        },
-        "person2": {
-            "reporterId": "$rootScope.uid",
-            "firstName": "Eleanor",
-            "lastName": "Stoops",
-            "age": 9,
-            "gender": "female",
-            "race": "caucasian",
-            "notes": "Eleanor is sending inappropriate videos via text to friends and sharing them on social media also. She is targeting a certain individual."
-        },
-        "person1": {
-            "reporterId": "$rootScope.uid",
-            "firstName": "Sue",
-            "lastName": "Smith",
-            "age": 17,
-            "gender": "female",
-            "race": "african_american",
-            "notes": "Sue is a black female who verbally and physically abuses her two younger brothers and one older sister."
         }
     },
     "incidents": {
         "incident0": {
-            "personID": "person0",
+            "reporterId": "12345",
+            "victimId": "individual0",
+            "offenderId": "individual1",
             "type": "verbal",
             "date": "12-1-17",
             "time": "1:00",
-            "description": "Matthias's friends called him a baby.",
+            "description": "Matthias's friend called him a baby.",
             "actionTaken": "reported to principal",
-            "actionNotes": "I called Mr. Penner on 12-1-17 to inform him of what happened. He said he would move the other kid to a different class."
+            "actionNotes": "Mother called Mr. Penner on 12-1-17 to inform him of what happened. He said he would move the other kid to a different class."
         },
         "incident1": {
-            "personID": "person1",
+            "reporterId": "$12345",
+            "victimId": "individual3",
+            "offenderId": "individual2",
             "type": "physical",
-            "date": "12-1-17",
+            "date": "10-31-17",
             "time": "1:01",
-            "description": "Maximus was hit with a bat at the park.",
-            "actionTaken": "reported to police",
-            "actionNotes": "A police report was completed."
+            "description": "Maximus was pushed down in the hallway as he walked to class. He fell into another student's notebook and cut his face directly below his left eye.",
+            "actionTaken": "reported to school officials",
+            "actionNotes": "Mother called Ms. Lester to report the incident. She was not understanding or helpful to the mother."
         },
         "incident2": {
-            "personID": "person0",
+            "reporterId": "12345",
+            "victimId": "individual3",
+            "offenderId": "individual2",
             "type": "cyber",
-            "date": "12-1-17",
+            "date": "11-7-17",
             "time": "1:02",
-            "description": "The bully created an inappropriate photo with Maximus's face overlayed on it. He shared it on social media and sent it to the entire student body at school.",
-            "actionTaken": "reported to police",
-            "actionNotes": "The officer said there was nothing they could do about this."
+            "description": "Kendrick pinned Maximus against the wall in the school bathroom and threatened to beat him up the next time Maximus looked at him.",
+            "actionTaken": "reported to school officials",
+            "actionNotes": "Mother called Ms. Lester to report the incident. Ms. Lester stated that she would make sure they were not in the bathroom together."
         }
     }
 }
