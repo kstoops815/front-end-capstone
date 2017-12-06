@@ -48,8 +48,52 @@ app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService){
       $rootScope.navbar = true;
     }
   });
+});
 
-
-
-  
+app.config(function($routeProvider){
+  $routeProvider
+  .when("/login", {
+    templateUrl: "partials/auth.html",
+    controller: "AuthCtrl"
+  })
+  .when("/home", {
+    templateUrl: "partials/home.html",
+    controller: "HomeCtrl",
+    resolve: {isAuth}
+  })
+  .when("/incidents/view", {
+    templateUrl: "partials/incidents/view.html",
+    controller: "IncidentsCtrl",
+    resolve: {isAuth}
+  })
+  .when("/incidents/new", {
+    templateUrl: "partials/incidents/new.html",
+    controller: "NewIncidentCtrl",
+    resolve: {isAuth}
+  })
+  .when("/incidents/edit:id", {
+    templateUrl: "partials/incidents/edit.html",
+    controller: "EditIncidentCtrl",
+    resolve: {isAuth}
+  })
+  .when("/individuals/view", {
+    templateUrl: "partials/individuals/view.html",
+    controller: "IndividualsCtrl",
+    resolve: {isAuth}
+  })
+  .when("/individuals/details/:id", {
+    templateUrl: "partials/incidents/details.html",
+    resolve: {isAuth}
+  })
+  .when("/individuals/new", {
+    templateUrl: "partials/individuals/new.html",
+    controller: "NewIndividualCtrl",
+    resolve: {isAuth}
+  })
+  .when("/individuals/edit:id", {
+    templateUrl: "partials/individuals/edit.html",
+    controller: "EditIndividualCtrl",
+    resolve: {isAuth}
+  })
+  .otherwise("/login");
 });
