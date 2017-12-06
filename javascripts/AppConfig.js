@@ -52,7 +52,7 @@ app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService){
 
 app.config(function($routeProvider){
   $routeProvider
-  .when("/login", {
+  .when("/auth", {
     templateUrl: "partials/auth.html",
     controller: "AuthCtrl"
   })
@@ -61,7 +61,7 @@ app.config(function($routeProvider){
     controller: "HomeCtrl",
     resolve: {isAuth}
   })
-  .when("/incidents/view", {
+  .when("/incidents", {
     templateUrl: "partials/incidents/view.html",
     controller: "IncidentsCtrl",
     resolve: {isAuth}
@@ -71,12 +71,12 @@ app.config(function($routeProvider){
     controller: "NewIncidentCtrl",
     resolve: {isAuth}
   })
-  .when("/incidents/edit:id", {
+  .when("/incidents/edit/:id", {
     templateUrl: "partials/incidents/edit.html",
     controller: "EditIncidentCtrl",
     resolve: {isAuth}
   })
-  .when("/individuals/view", {
+  .when("/individuals", {
     templateUrl: "partials/individuals/view.html",
     controller: "IndividualsCtrl",
     resolve: {isAuth}
@@ -90,7 +90,7 @@ app.config(function($routeProvider){
     controller: "NewIndividualCtrl",
     resolve: {isAuth}
   })
-  .when("/individuals/edit:id", {
+  .when("/individuals/edit/:id", {
     templateUrl: "partials/individuals/edit.html",
     controller: "EditIndividualCtrl",
     resolve: {isAuth}

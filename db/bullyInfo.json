@@ -1,0 +1,75 @@
+{
+    "individuals": {
+        "individual0": {
+            "reporterId": "12345",
+            "firstName": "Matthias",
+            "lastName": "Ward",
+            "age": 12,
+            "gender": "male",
+            "race": "biracial",
+            "notes": "Matthias is a biracial male who is being talked about and taunted by his classmates."
+        },
+        "individual1": {
+            "reporterId": "12345",
+            "firstName": "Sue",
+            "lastName": "Smith",
+            "age": 13,
+            "gender": "female",
+            "race": "african_american",
+            "notes": "Sue is a black female who is verbally abusing Matthias."
+        },
+        "individual2": {
+            "reporterId": "12345",
+            "firstName": "Kendrick",
+            "lastName": "Butthole",
+            "age": 16,
+            "gender": "male",
+            "race": "african_american",
+            "notes": "Kendrick has been phsyically abusing Maximus at school."
+        },
+        "individual3": {
+            "reporterId": "12345",
+            "firstName": "Maximus",
+            "lastName": "Ward",
+            "age": 15,
+            "gender": "male",
+            "race": "biracial",
+            "notes": "Maximus is a biracial male who is being phsyically assaulted by another male."
+        }
+    },
+    "incidents": {
+        "incident0": {
+            "reporterId": "12345",
+            "victimId": "individual0",
+            "offenderId": "individual1",
+            "type": "verbal",
+            "date": "12-1-17",
+            "time": "1:00",
+            "description": "Matthias's friend called him a baby.",
+            "actionTaken": "reported to principal",
+            "actionNotes": "Mother called Mr. Penner on 12-1-17 to inform him of what happened. He said he would move the other kid to a different class."
+        },
+        "incident1": {
+            "reporterId": "$12345",
+            "victimId": "individual3",
+            "offenderId": "individual2",
+            "type": "physical",
+            "date": "10-31-17",
+            "time": "1:01",
+            "description": "Maximus was pushed down in the hallway as he walked to class. He fell into another student's notebook and cut his face directly below his left eye.",
+            "actionTaken": "reported to school officials",
+            "actionNotes": "Mother called Ms. Lester to report the incident. She was not understanding or helpful to the mother."
+        },
+        "incident2": {
+            "reporterId": "12345",
+            "victimId": "individual3",
+            "offenderId": "individual2",
+            "type": "cyber",
+            "date": "11-7-17",
+            "time": "1:02",
+            "description": "Kendrick pinned Maximus against the wall in the school bathroom and threatened to beat him up the next time Maximus looked at him.",
+            "actionTaken": "reported to school officials",
+            "actionNotes": "Mother called Ms. Lester to report the incident. Ms. Lester stated that she would make sure they were not in the bathroom together."
+        }
+    }
+}
