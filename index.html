@@ -3,11 +3,38 @@
 <head>
 	<title>The Bully Tracker</title>
 	<link rel="stylesheet" type="text/css" href="./lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="./styles/main.css">
 </head>
-<body>
+<body ng-app="BullyTracker">
+	<div ng-include="'./partials/navbar.html'"></div>
+	<div ng-view></div>
 
+	<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
 
-<script type="text/javascript" src="lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="lib/node_modules/angular/angular.min.js"></script>
+	<script type="text/javascript" src="lib/node_modules/angular-route/angular-route.min.js"></script>
+	<script type="text/javascript" src="lib/node_modules/angular-animate/angular-animate.min.js"></script>
+	<script type="text/javascript" src="lib/node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+
+	<script type="text/javascript" src="./javascripts/app.js"></script>
+	<script type="text/javascript" src="./javascripts/AppConstants.js"></script>
+	<script type="text/javascript" src="./javascripts/AppConfig.js"></script>
+
+	<script type="text/javascript" src="./javascripts/services/AuthService.js"></script>
+	<script type="text/javascript" src="./javascripts/services/IncidentService.js"></script>
+	<script type="text/javascript" src="./javascripts/services/IndividualService.js"></script>
+
+	<script type="text/javascript" src="./javascripts/controllers/AuthCtrl.js"></script>
+	<script type="text/javascript" src="./javascripts/controllers/NavCtrl.js"></script>
+	<script type="text/javascript" src="./javascripts/controllers/HomeCtrl.js"></script>
+	<script type="text/javascript" src="./javascripts/controllers/IncidentsCtrl.js"></script>
+	<script type="text/javascript" src="./javascripts/controllers/NewIncidentCtrl.js"></script>
+	<script type="text/javascript" src="./javascripts/controllers/EditIncidentCtrl.js"></script>
+	<script type="text/javascript" src="./javascripts/controllers/IndividualsCtrl.js"></script>
+	<script type="text/javascript" src="./javascripts/controllers/NewIndividualCtrl.js"></script>
+	<script type="text/javascript" src="./javascripts/controllers/EditIndividualCtrl.js"></script>
+
 </body>
 </html>

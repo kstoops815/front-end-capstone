@@ -1,7 +1,5 @@
-"use strict";
-
 /* globals app: true */
 
 "use strict";
 
-const app = angular.module('ExampleNameApp', ["ngAnimate", "ngRoute", "ngSanitize"]);
+const app = angular.module("BullyTracker", ["ngAnimate", "ngRoute", "ngSanitize"]);
