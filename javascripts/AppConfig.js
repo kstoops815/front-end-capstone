@@ -82,7 +82,8 @@ app.config(function($routeProvider){
     resolve: {isAuth}
   })
   .when("/individuals/details/:id", {
-    templateUrl: "partials/incidents/details.html",
+    templateUrl: "partials/individuals/details.html",
+    controller: "DetailsCtrl",
     resolve: {isAuth}
   })
   .when("/individuals/new", {
@@ -95,5 +96,5 @@ app.config(function($routeProvider){
     controller: "EditIndividualCtrl",
     resolve: {isAuth}
   })
-  .otherwise("/login");
+  .otherwise("/auth");
 });
