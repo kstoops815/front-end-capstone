@@ -42,7 +42,7 @@ app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService){
     } else if (appTo && logged){
       //if on /auth page AND logged in, redirect to search page
       $rootScope.navbar = true;
-      $location.path('/search');
+      $location.path('/home');
     } else if (!appTo && logged){
       //if not on /auth page AND logged in see other navbar
       $rootScope.navbar = true;

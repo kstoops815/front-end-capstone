@@ -1,1 +1,43 @@
-<h1>{{controller}}</h1>
+<h1 class="pageHeading">My Dashboard</h1>
+
+<div id="individuals" class="container-fluid">
+	<h2 class="sectionHeading">Individuals</h2>	
+	<div ng-repeat="individual in individuals" class="col-sm-2 individual">
+		<div class="thumbnail">
+			<button class="btn btn-default delete" data-toggle="tooltip" data-placement="top" title="Delete Individual"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+			<button class="btn btn-default pencil" data-toggle="tooltip" data-placement="top" title="Edit Individual"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+			<h4>{{individual.firstName}}</h4>
+			<h4>{{individual.lastName}}</h4>
+		</div>
+		<div class="individualDemographic">
+			<p>{{individual.firstName}}</p>
+			<p>{{individual.lastName}}</p>
+			<p>Age: {{individual.age}}</p>
+			<p>Gender: {{individual.gender}}</p>
+			<p>Race: {{individual.race}}</p>
+			<p>Notes: {{individual.notes}}</p>
+		</div>
+	</div>
+</div>
+
+<div id="incidents" class="container-fluid">
+	<h2 class="sectionHeading">Incidents</h2>	
+	<div ng-repeat="incident in incidents" class="col-sm-2 incident">
+		<div class="thumbnail">
+			<button class="btn btn-default delete" data-toggle="tooltip" data-placement="top" title="Delete Incident"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+			<button class="btn btn-default pencil" data-toggle="tooltip" data-placement="top" title="Edit Incident"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+			<h4>{{incident.date}}</h4>
+		</div>
+		<div class=" incidentQuickView">
+			<p>Victim: {{incident.victimId}}</p>
+			<p>Offender: {{incident.offenderId}}</p>
+			<p>Type: {{incident.type}}</p>
+			<p>Date: {{incident.date}}</p>
+			<p>Time: {{incident.time}}</p>
+			<p>Description: {{incident.description}}</p>
+			<p>Action Taken: {{incident.actionTaken}}</p>
+			<p>Action Notes: {{incident.actionNotes}}</p>
+		</div>
+		</div>
+	</div>
+</div>
