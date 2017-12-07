@@ -1,11 +1,24 @@
-<h1>My Dashboard</h1>
+<h1 class="pageHeading">My Dashboard</h1>
 
 <div id="individuals">
-	
+	<h2 class="sectionHeading">Individuals</h2>	
 	<div ng-repeat="individual in individuals" class="col-sm-3 individual">
 		<div class="thumbnail">
-			<h3>{{individual.firstName}}</h3>
-			<h3>{{individual.lastName}}</h3>
+			<button class="btn btn-default delete" data-toggle="tooltip" data-placement="top" title="Delete Individual"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+			<button class="btn btn-default pencil" data-toggle="tooltip" data-placement="top" title="Edit Individual"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+			<h4>{{individual.firstName}}</h4>
+			<h4>{{individual.lastName}}</h4>
+		</div>
+	</div>
+</div>
+
+<div id="incidents">
+	<h2 class="sectionHeading">Incidents</h2>	
+	<div ng-repeat="incident in incidents" class="col-sm-3 incident">
+		<div class="thumbnail">
+			<button class="btn btn-default delete" data-toggle="tooltip" data-placement="top" title="Delete Incident"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+			<button class="btn btn-default pencil" data-toggle="tooltip" data-placement="top" title="Edit Incident"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+			<h4>{{incident.date}}</h4>
 		</div>
 	</div>
 </div>

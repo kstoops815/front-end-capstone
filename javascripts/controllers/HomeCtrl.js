@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("HomeCtrl", function($scope, AuthService, IndividualsService){
+app.controller("HomeCtrl", function($scope, AuthService, IncidentsService, IndividualsService){
 
 	$scope.individuals = [];
 
@@ -14,6 +14,20 @@ app.controller("HomeCtrl", function($scope, AuthService, IndividualsService){
 	};
 
 	showIndividuals();
+
+
+	$scope.incidents = [];
+
+	const showIncidents = () => {
+		IncidentsService.getAllIncidents(AuthService.getCurrentUid()).then((results) => {
+			console.log("results", results);
+			$scope.incidents = results;
+		}).catch((error) => {
+			console.log("error in show showIncidents", error);
+		});
+	};
+
+	showIncidents();
 
 
 
