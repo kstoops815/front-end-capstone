@@ -1,1 +1,19 @@
-<h1>{{controller}}</h1>
+<div class="container-fluid individuals">
+	<h2 class="sectionHeading">Individuals</h2>	
+	<div ng-repeat="individual in individuals" class="col-sm-2 individual">
+		<div class="thumbnail">
+			<button class="btn btn-default delete" data-toggle="tooltip" data-placement="top" title="Delete Individual"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+			<button class="btn btn-default pencil" data-toggle="tooltip" data-placement="top" title="Edit Individual"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+			<h4>{{individual.firstName}}</h4>
+			<h4>{{individual.lastName}}</h4>
+		</div>
+		<div class="individualDemographic">
+			<p>{{individual.firstName}}</p>
+			<p>{{individual.lastName}}</p>
+			<p>Age: {{individual.age}}</p>
+			<p>Gender: {{individual.gender}}</p>
+			<p>Race: {{individual.race}}</p>
+			<p>Notes: {{individual.notes}}</p>
+		</div>
+	</div>
+</div>
