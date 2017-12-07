@@ -1,1 +1,11 @@
-<h1>{{controller}}</h1>
+<h1>My Dashboard</h1>
+
+<div id="individuals">
+	
+	<div ng-repeat="individual in individuals" class="col-sm-3 individual">
+		<div class="thumbnail">
+			<h3>{{individual.firstName}}</h3>
+			<h3>{{individual.lastName}}</h3>
+		</div>
+	</div>
+</div>
