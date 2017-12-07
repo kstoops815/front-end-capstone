@@ -13,7 +13,6 @@ app.service("IncidentsService", function($http, $q, FIREBASE_CONFIG ) {
 					incidents.push(fbIncidents[key]);
 				});
 				resolve(incidents);
-				console.log("incidents in service", incidents);
 			}).catch((error) => {
 				reject(error);
 			});

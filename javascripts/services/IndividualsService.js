@@ -13,7 +13,6 @@ app.service("IndividualsService", function($http, $q, FIREBASE_CONFIG ) {
 					individuals.push(fbIndividuals[key]);
 				});
 				resolve(individuals);
-				console.log("individuals in service", individuals);
 			}).catch((error) => {
 				reject(error);
 			});
