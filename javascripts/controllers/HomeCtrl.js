@@ -3,6 +3,8 @@
 app.controller("HomeCtrl", function($scope, AuthService, IncidentsService, IndividualsService){
 
 	$scope.individuals = [];
+	$scope.isNavCollapsed = true;
+  	$scope.isCollapsed = false;
 
 	const showIndividuals = () => {
 		IndividualsService.getAllIndividuals(AuthService.getCurrentUid()).then((results) => {
@@ -28,7 +30,6 @@ app.controller("HomeCtrl", function($scope, AuthService, IncidentsService, Indiv
 	};
 
 	showIncidents();
-
 
 
 });
