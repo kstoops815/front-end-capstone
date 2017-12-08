@@ -2,7 +2,7 @@
 
 app.controller("NewIndividualCtrl", function($location, $scope, IndividualsService){
 	
-	$scope.individual = [];
+	$scope.newIndividual = [];
 	$scope.button = "";
 	$scope.races = ["American Indian or Alaska Native", "Asian", "Black or African American", "Hispanic or Latino", "Native Hawaiian or Other Pacific Islander", "White"];
 
@@ -18,9 +18,8 @@ app.controller("NewIndividualCtrl", function($location, $scope, IndividualsServi
 
 
 	$scope.selectRace = (race) => {
-    $scope.button = race;
-    console.log("button dropdown", $scope.button);
-  };
+    	$scope.newIndividual.race = race;
+  	};
 
 
 });

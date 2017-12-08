@@ -18,14 +18,9 @@
         Select One<span class="caret"></span>
       	</button>
       	<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button" >
-	       <li role="menuitem" ng-repeat="race in races" ng-model="newIndividual.race"><a ng-click="selectRace(race)">{{race}}</a></li>
-	       <!--  <li role="menuitem"><a>American Indian or Alaska Native</a></li>
-	        <li role="menuitem"><a>Asian</a></li>
-	        <li role="menuitem"><a>Black or African American</a></li>
-	        <li role="menuitem"><a>Hispanic or Latino</a></li>
-	        <li role="menuitem"><a>Native Hawaiian or Other Pacific Islander</a></li>
-	        <li role="menuitem"><a>White</a></li> -->
+	       <li role="menuitem" ng-repeat="race in races"><a ng-click="selectRace(race)">{{race}}</a></li>
 	      </ul>
+	      <span ng-show="newIndividual.race">Selected Race: {{newIndividual.race}}</span>
 	    </div>
 	</div>
   <!-- <div class="form-group">
