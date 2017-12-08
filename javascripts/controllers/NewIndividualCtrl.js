@@ -9,7 +9,6 @@ app.controller("NewIndividualCtrl", function($location, $scope, IndividualsServi
 
 	$scope.saveNewIndividual = (individual) => {
 		let newIndividual = IndividualsService.createIndividualObject(individual);
-		console.log("newIndividual", newIndividual);
 		IndividualsService.postIndividual(newIndividual).then(() => {
 			$location.path("individuals/view");
 		}).catch((error) => {
