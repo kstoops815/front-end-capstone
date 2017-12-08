@@ -2,7 +2,7 @@
 
 console.log("in IndividualsService.js");
 
-app.service("IndividualsService", function($http, $q, FIREBASE_CONFIG ) {
+app.service("IndividualsService", function($http, $q, AuthService, FIREBASE_CONFIG ) {
 	const getAllIndividuals = (userUid) => {
 		let individuals = [];
 		return $q((resolve, reject) => {
@@ -19,10 +19,27 @@ app.service("IndividualsService", function($http, $q, FIREBASE_CONFIG ) {
 		});
 	};
 
+	const createIndividualObject = (newIndividual) => {
+		return {
+			"reporterId": AuthService.getCurrentUid(),
+			"firstName": newIndividual.firstName,
+ 			"lastName": newIndividual.lastName,
+ 			"age": newIndividual.age,
+ 			"gender": newIndividual.gender,
+ 			"race": newIndividual.race,
+			 "notes": newIndividual.notes,
+ 			
+		};
+	};
+
+	const postIndividual = (individual) => {
+		return $http.post(`${FIREBASE_CONFIG.databaseURL}/individuals.json`, JSON.stringify(individual));
+	};
 
 
 
-return {getAllIndividuals};
+
+return {getAllIndividuals, postIndividual, createIndividualObject};
 
 
 });

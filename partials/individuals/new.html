@@ -1,1 +1,45 @@
-<h1>{{controller}}</h1>
+<form>
+  <div class="form-group">
+    <label for="addFirstName">First Name</label>
+    <input type="text" class="form-control" id="addFirstName" ng-model="newIndividual.firstName" placeholder="First Name" required>
+  </div>
+  <div class="form-group">
+    <label for="addLastName">Last Name</label>
+    <input type="text" class="form-control" id="addLastName" ng-model="newIndividual.lastName" placeholder="Last Name" required>
+  </div>
+  <div class="form-group">
+    <label for="addAge">Age</label>
+    <input type="number" id="addAge" ng-model="newIndividual.age" placeholder="Age" required>
+  </div>
+  <div>
+  	<label for="addRace">Race</label>
+  	<div class="btn-group" uib-dropdown is-open="status.isopen">
+      	<button id="single-button addRace" type="button" class="btn btn-default"  uib-dropdown-toggle ng-disabled="disabled" required>
+        Select One<span class="caret"></span>
+      	</button>
+      	<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button" >
+	       <li role="menuitem" ng-repeat="race in races" ng-model="newIndividual.race"><a ng-click="selectRace(race)">{{race}}</a></li>
+	       <!--  <li role="menuitem"><a>American Indian or Alaska Native</a></li>
+	        <li role="menuitem"><a>Asian</a></li>
+	        <li role="menuitem"><a>Black or African American</a></li>
+	        <li role="menuitem"><a>Hispanic or Latino</a></li>
+	        <li role="menuitem"><a>Native Hawaiian or Other Pacific Islander</a></li>
+	        <li role="menuitem"><a>White</a></li> -->
+	      </ul>
+	    </div>
+	</div>
+  <!-- <div class="form-group">
+    <label for="addGender">Gender</label>
+    <input type="text" class="form-control" id="addGender" placeholder="Gender">
+  </div> -->
+  <div class="form-group">
+    <label for="addGender">Gender</label>
+    <input type="text" class="form-control" id="addGender" placeholder="Gender">
+  </div>
+  <div class="form-group">
+    <label for="addNotes">Notes</label>
+    <textarea class="form-control" rows="3" ng-model="newIndividual.notes">Notes</textarea>
+  </div>
+  
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
