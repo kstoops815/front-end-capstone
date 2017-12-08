@@ -1,7 +1,5 @@
 "use strict";
 
-console.log("in IncidentsService.js");
-
 app.service("IncidentsService", function($http, $q, FIREBASE_CONFIG ) {
 	const getAllIncidents = (userUid) => {
 		let incidents = [];

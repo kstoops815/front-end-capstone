@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("IndividualsCtrl", function($scope, AuthService, IndividualsService){
+app.controller("IndividualsCtrl", function($location, $scope, AuthService, IndividualsService){
 	
 	const showIndividuals = () => {
 		IndividualsService.getAllIndividuals(AuthService.getCurrentUid()).then((results) => {
@@ -13,7 +13,9 @@ app.controller("IndividualsCtrl", function($scope, AuthService, IndividualsServi
 	showIndividuals();
 
 
-
+	$scope.goToAddIndividualForm = () => {
+        $location.path("/individuals/new");
+    };
 
 
 
