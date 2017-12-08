@@ -14,23 +14,34 @@
   <div>
   	<label for="addRace">Race</label>
   	<div class="btn-group" uib-dropdown is-open="status.isopen">
-      	<button id="single-button addRace" type="button" class="btn btn-default"  uib-dropdown-toggle ng-disabled="disabled" required>
+      	<button id="race-single-button addRace" type="button" class="btn btn-default"  uib-dropdown-toggle ng-disabled="disabled" required>
         Select One<span class="caret"></span>
       	</button>
       	<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button" >
 	       <li role="menuitem" ng-repeat="race in races"><a ng-click="selectRace(race)">{{race}}</a></li>
-	      </ul>
+	    </ul>
 	      <span ng-show="newIndividual.race">Selected Race: {{newIndividual.race}}</span>
+	</div>
+	<div>
+  	<label for="addGender">Gender</label>
+  	<div class="btn-group" uib-dropdown is-open="status.isopen">
+      	<button id="gender-single-button addGender" type="button" class="btn btn-default"  uib-dropdown-toggle ng-disabled="disabled" required>
+        Select One<span class="caret"></span>
+      	</button>
+      	<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button" >
+	       <li role="menuitem" ng-repeat="gender in genders"><a ng-click="selectGender(gender)">{{gender}}</a></li>
+	      </ul>
+	      <span ng-show="newIndividual.gender">Selected Race: {{newIndividual.gender}}</span>
 	    </div>
 	</div>
   <!-- <div class="form-group">
     <label for="addGender">Gender</label>
     <input type="text" class="form-control" id="addGender" placeholder="Gender">
   </div> -->
-  <div class="form-group">
+ <!--  <div class="form-group">
     <label for="addGender">Gender</label>
     <input type="text" class="form-control" id="addGender" placeholder="Gender">
-  </div>
+  </div> -->
   <div class="form-group">
     <label for="addNotes">Notes</label>
     <textarea class="form-control" rows="3" ng-model="newIndividual.notes">Notes</textarea>
