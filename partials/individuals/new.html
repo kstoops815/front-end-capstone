@@ -24,7 +24,7 @@
 	</div>
 	<div>
   	<label for="addGender">Gender</label>
-  	<div class="btn-group" uib-dropdown is-open="status.isopen">
+  	<div class="btn-group" uib-dropdown is-open="status.isclosed">
       	<button id="gender-single-button addGender" type="button" class="btn btn-default"  uib-dropdown-toggle ng-disabled="disabled" required>
         Select One<span class="caret"></span>
       	</button>
@@ -34,18 +34,10 @@
 	      <span ng-show="newIndividual.gender">Selected Race: {{newIndividual.gender}}</span>
 	    </div>
 	</div>
-  <!-- <div class="form-group">
-    <label for="addGender">Gender</label>
-    <input type="text" class="form-control" id="addGender" placeholder="Gender">
-  </div> -->
- <!--  <div class="form-group">
-    <label for="addGender">Gender</label>
-    <input type="text" class="form-control" id="addGender" placeholder="Gender">
-  </div> -->
   <div class="form-group">
     <label for="addNotes">Notes</label>
     <textarea class="form-control" rows="3" ng-model="newIndividual.notes">Notes</textarea>
   </div>
   
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" class="btn btn-default" ng-click="saveNewIndividual(newIndividual)">Submit</button>
 </form>
