@@ -1,7 +1,5 @@
 "use strict";
 
-console.log("in IndividualsService.js");
-
 app.service("IndividualsService", function($http, $q, AuthService, FIREBASE_CONFIG ) {
 	const getAllIndividuals = (userUid) => {
 		let individuals = [];

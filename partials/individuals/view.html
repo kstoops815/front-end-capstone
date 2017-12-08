@@ -1,5 +1,8 @@
 <div class="container-fluid individuals">
-	<h2 class="sectionHeading">Individuals</h2>	
+	<div class="addNewIndividualButton">
+		<h2 class="sectionHeading">Individuals</h2>
+		<button class="btn btn-default add" ng-click="goToAddIndividualForm()">Add New Individual To Track</button>	
+	</div>	
 	<div ng-repeat="individual in individuals" class="col-sm-2 individual">
 		<div class="thumbnail">
 			<button class="btn btn-default delete" data-toggle="tooltip" data-placement="top" title="Delete Individual"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
