@@ -3,8 +3,8 @@
 app.controller("DetailsCtrl", function($http, $routeParams, $scope, AuthService, FIREBASE_CONFIG, IncidentsService, IndividualsService){
 
 	$scope.individual = {};
-	$scope.incidentsAsVictim = [];
-	$scope.incidentsAsOffender = [];
+	$scope.victimIncidents = [];
+	$scope.offenderIncidents = [];
 
 	const getIndividual = () => {
 		IndividualsService.getSingleIndividual($routeParams.id).then((results) => {
@@ -26,13 +26,13 @@ app.controller("DetailsCtrl", function($http, $routeParams, $scope, AuthService,
 			console.log("allIncidents", allIncidents);
 			allIncidents.forEach((incident) => {
 				if(incident.victimId === individualBeingViewed){
-					$scope.incidentsAsVictim.push(incident);
+					$scope.victimIncidents.push(incident);
 				}else if(incident.offenderId === individualBeingViewed){
-					$scope.incidentsAsOffender.push(incident);
+					$scope.offenderIncidents.push(incident);
 				}
 			});
-			console.log("$scope.incidentsAsOffender", $scope.incidentsAsOffender);
-			console.log("$scope.incidentsAsVictim", $scope.incidentsAsVictim);
+			console.log("$scope.offenderIncidents", $scope.offenderIncidents);
+			console.log("$scope.victimIncidents", $scope.victimIncidents);
 		}).catch((error) => {
 			console.log("error in getIncidentsForSingleIndividual", error);
 		});

@@ -1,1 +1,15 @@
 <h1>Incident History for: {{individual.firstName}} {{individual.lastName}}</h1>
+
+<div>
+	<h3>Incidents as Victim</h3>
+</div>
+<div ng-repeat="victimIncident in victimIncidents">
+	<div class="thumbnail col-sm-2 victimIncident">
+		<p><strong>Date:</strong> {{victimIncident.date}}</p>
+		<p><strong>Time:</strong> {{victimIncident.time}}</p>
+		<p><strong>Description:</strong> {{victimIncident.description}}</p>
+		<p><strong>Action Taken:</strong> {{victimIncident.actionTaken}}</p>
+		<p><strong>Action Notes:</strong> {{victimIncident.actionNotes}}</p>
+
+	
+</div>
