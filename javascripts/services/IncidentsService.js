@@ -10,7 +10,6 @@ app.service("IncidentsService", function($http, $q, FIREBASE_CONFIG, Individuals
 					fbIncidents[key].id = key;
 					incidents.push(fbIncidents[key]);
 				});
-				console.log("IncidentsService", incidents);
 				resolve(incidents);
 			}).catch((error) => {
 				reject(error);
