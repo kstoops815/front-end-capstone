@@ -6,10 +6,10 @@ app.controller("DetailsCtrl", function($http, $routeParams, $scope, AuthService,
 	$scope.victimIncidents = [];
 	$scope.offenderIncidents = [];
 
+	//get single individual information
 	const getIndividual = () => {
 		IndividualsService.getSingleIndividual($routeParams.id).then((results) => {
 			$scope.individual = results.data;
-			console.log("in getIndividual", $scope.individual);
 		}).catch((error) => {
 			console.log("error in getIndividual", error);
 		});
@@ -17,13 +17,11 @@ app.controller("DetailsCtrl", function($http, $routeParams, $scope, AuthService,
 
 	getIndividual();
 
+	//Get all incidents that a single person is involved in either as the offender or the victim
 	const getIncidentsForSingleIndividual = () => {
 		IncidentsService.getAllIncidents(AuthService.getCurrentUid()).then((results) => {
-			console.log("results", results);
 			let individualBeingViewed = $routeParams.id;
-			console.log("$routeParams.id", $routeParams.id);
 			let allIncidents = results;
-			console.log("allIncidents", allIncidents);
 			allIncidents.forEach((incident) => {
 				if(incident.victimId === individualBeingViewed){
 					IndividualsService.getSingleIndividual(incident.offenderId).then((results) => {
@@ -37,8 +35,6 @@ app.controller("DetailsCtrl", function($http, $routeParams, $scope, AuthService,
 					});
 				}
 			});
-			console.log("$scope.offenderIncidents", $scope.offenderIncidents);
-			console.log("$scope.victimIncidents", $scope.victimIncidents);
 		}).catch((error) => {
 			console.log("error in getIncidentsForSingleIndividual", error);
 		});

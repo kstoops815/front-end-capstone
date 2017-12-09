@@ -16,8 +16,6 @@ app.controller("NewIndividualCtrl", function($location, $scope, IndividualsServi
 		});
 	};
 
-
-
 	$scope.selectRace = (race) => {
     	$scope.newIndividual.race = race;
   	};
