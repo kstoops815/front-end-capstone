@@ -1,7 +1,7 @@
 "use strict";
 
 app.controller("IndividualsCtrl", function($location, $scope, AuthService, IndividualsService){
-	
+	//Individuals get, print to DOM, edit, delete, add functions
 	const showIndividuals = () => {
 		IndividualsService.getAllIndividuals(AuthService.getCurrentUid()).then((results) => {
 			$scope.individuals = results;
@@ -11,6 +11,10 @@ app.controller("IndividualsCtrl", function($location, $scope, AuthService, Indiv
 	};
 
 	showIndividuals();
+
+	$scope.editIndividualInfo = (individualId) => {
+		$location.path(`/individuals/edit/${individualId}`);
+	};
 
 
 	$scope.goToAddIndividualForm = () => {

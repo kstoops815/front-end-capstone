@@ -92,7 +92,7 @@ app.config(function($routeProvider){
     resolve: {isAuth}
   })
   .when("/individuals/edit/:id", {
-    templateUrl: "partials/individuals/new.html",
+    templateUrl: "partials/individuals/edit.html",
     controller: "EditIndividualCtrl",
     resolve: {isAuth}
   })

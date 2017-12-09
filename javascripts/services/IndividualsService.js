@@ -34,14 +34,22 @@ app.service("IndividualsService", function($http, $q, AuthService, FIREBASE_CONF
 		return $http.post(`${FIREBASE_CONFIG.databaseURL}/individuals.json`, JSON.stringify(individual));
 	};
 
-	const getSingleInidividual = (individualId) => {
+	const getSingleIndividual = (individualId) => {
 		return $http.get(`${FIREBASE_CONFIG.databaseURL}/individuals/${individualId}.json`);
+	};
+
+	const deleteIndividual = (contactId) => {
+		return $http.delete(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`);
+	};
+
+	const updateIndividual = (individual, individualId) => {
+		return $http.put(`${FIREBASE_CONFIG.databaseURL}/individuals/${individualId}.json`, JSON.stringify(individual));
 	};
 
 
 
 
-return {getAllIndividuals, postIndividual, createIndividualObject, getSingleInidividual};
+return {getAllIndividuals, postIndividual, createIndividualObject, getSingleIndividual, deleteIndividual, updateIndividual};
 
 
 
