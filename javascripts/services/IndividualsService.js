@@ -38,8 +38,8 @@ app.service("IndividualsService", function($http, $q, AuthService, FIREBASE_CONF
 		return $http.get(`${FIREBASE_CONFIG.databaseURL}/individuals/${individualId}.json`);
 	};
 
-	const deleteIndividual = (contactId) => {
-		return $http.delete(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`);
+	const deleteIndividual = (individualId) => {
+		return $http.delete(`${FIREBASE_CONFIG.databaseURL}/individuals/${individualId}.json`);
 	};
 
 	const updateIndividual = (individual, individualId) => {
