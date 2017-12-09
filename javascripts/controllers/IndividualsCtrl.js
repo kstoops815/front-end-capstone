@@ -24,6 +24,10 @@ app.controller("IndividualsCtrl", function($location, $scope, AuthService, Indiv
 		});
 	};
 
+	$scope.getIncidentsForIndividual = (individualId) => {
+		$location.path(`/individuals/details/${individualId}`);
+	};
+
 
 	$scope.goToAddIndividualForm = () => {
         $location.path("/individuals/new");
