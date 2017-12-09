@@ -34,10 +34,15 @@ app.service("IndividualsService", function($http, $q, AuthService, FIREBASE_CONF
 		return $http.post(`${FIREBASE_CONFIG.databaseURL}/individuals.json`, JSON.stringify(individual));
 	};
 
+	const getSingleInidividual = (individualId) => {
+		return $http.get(`${FIREBASE_CONFIG.databaseURL}/individuals/${individualId}.json`);
+	};
 
 
 
-return {getAllIndividuals, postIndividual, createIndividualObject};
+
+return {getAllIndividuals, postIndividual, createIndividualObject, getSingleInidividual};
+
 
 
 });
