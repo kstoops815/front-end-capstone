@@ -16,6 +16,14 @@ app.controller("HomeCtrl", function($location, $scope, AuthService, IncidentsSer
 		$location.path(`/individuals/edit/${individualId}`);
 	};
 
+	$scope.deleteIndividual = (individualId) => {
+		IndividualsService.deleteIndividual(individualId).then(() => {
+			showIndividuals();
+		}).catch((error) => {
+			console.log("error in deleteIndividual", error);
+		});
+	};
+
 	//Incidents get, edit, and delete functions
 	$scope.incidents = [];
 

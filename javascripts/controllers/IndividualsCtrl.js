@@ -16,6 +16,14 @@ app.controller("IndividualsCtrl", function($location, $scope, AuthService, Indiv
 		$location.path(`/individuals/edit/${individualId}`);
 	};
 
+	$scope.deleteIndividual = (individualId) => {
+		IndividualsService.deleteIndividual(individualId).then(() => {
+			showIndividuals();
+		}).catch((error) => {
+			console.log("error in deleteIndividual", error);
+		});
+	};
+
 
 	$scope.goToAddIndividualForm = () => {
         $location.path("/individuals/new");
