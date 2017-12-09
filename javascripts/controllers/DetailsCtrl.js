@@ -26,9 +26,15 @@ app.controller("DetailsCtrl", function($http, $routeParams, $scope, AuthService,
 			console.log("allIncidents", allIncidents);
 			allIncidents.forEach((incident) => {
 				if(incident.victimId === individualBeingViewed){
-					$scope.victimIncidents.push(incident);
+					IndividualsService.getSingleIndividual(incident.offenderId).then((results) => {
+						incident.offender = results.data;
+						$scope.victimIncidents.push(incident);
+					});
 				}else if(incident.offenderId === individualBeingViewed){
-					$scope.offenderIncidents.push(incident);
+					IndividualsService.getSingleIndividual(incident.victimId).then((results) => {
+						incident.victim = results.data;
+						$scope.offenderIncidents.push(incident);
+					});
 				}
 			});
 			console.log("$scope.offenderIncidents", $scope.offenderIncidents);
@@ -37,7 +43,6 @@ app.controller("DetailsCtrl", function($http, $routeParams, $scope, AuthService,
 			console.log("error in getIncidentsForSingleIndividual", error);
 		});
 	};
-
 
 	getIncidentsForSingleIndividual();
 

@@ -17,6 +17,7 @@ app.service("IndividualsService", function($http, $q, AuthService, FIREBASE_CONF
 		});
 	};
 
+
 	const createIndividualObject = (newIndividual) => {
 		return {
 			"reporterId": AuthService.getCurrentUid(),

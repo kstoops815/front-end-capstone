@@ -1,15 +1,28 @@
 <h1>Incident History for: {{individual.firstName}} {{individual.lastName}}</h1>
 
-<div>
+<div class="container-fluid victimIncidents">
 	<h3>Incidents as Victim</h3>
+	<div ng-repeat="victimIncident in victimIncidents">
+		<div class="thumbnail col-sm-2 victimIncident">
+			<p><strong>Date:</strong> {{victimIncident.date}}</p>
+			<p><strong>Time:</strong> {{victimIncident.time}}</p>
+			<p><strong>Description:</strong> {{victimIncident.description}}</p>
+			<p><strong>Action Taken:</strong> {{victimIncident.actionTaken}}</p>
+			<p><strong>Action Notes:</strong> {{victimIncident.actionNotes}}</p>
+			<p><strong>Offender:</strong> {{victimIncident.offender.firstName}} {{victimIncident.offender.lastName}}</p>
+		</div>
+	</div>
 </div>
-<div ng-repeat="victimIncident in victimIncidents">
-	<div class="thumbnail col-sm-2 victimIncident">
-		<p><strong>Date:</strong> {{victimIncident.date}}</p>
-		<p><strong>Time:</strong> {{victimIncident.time}}</p>
-		<p><strong>Description:</strong> {{victimIncident.description}}</p>
-		<p><strong>Action Taken:</strong> {{victimIncident.actionTaken}}</p>
-		<p><strong>Action Notes:</strong> {{victimIncident.actionNotes}}</p>
-
-	
+<div class="container-fluid offenderIncidents">
+	<h3>Incidents as Offender</h3>
+	<div ng-repeat="offenderIncident in offenderIncidents">
+		<div class="thumbnail col-sm-2 offenderIncident">
+			<p><strong>Date:</strong> {{offenderIncident.date}}</p>
+			<p><strong>Time:</strong> {{offenderIncident.time}}</p>
+			<p><strong>Description:</strong> {{offenderIncident.description}}</p>
+			<p><strong>Action Taken:</strong> {{offenderIncident.actionTaken}}</p>
+			<p><strong>Action Notes:</strong> {{victimIncident.actionNotes}}</p>
+			<p><strong>Offender:</strong> {{offenderIncident.offender.firstName}} {{offenderIncident.victim.lastName}}</p>
+		</div>
+	</div>
 </div>
