@@ -1,6 +1,6 @@
 "use strict";
 
-app.service("IncidentsService", function($http, $q, FIREBASE_CONFIG ) {
+app.service("IncidentsService", function($http, $q, FIREBASE_CONFIG, IndividualsService ) {
 	const getAllIncidents = (userUid) => {
 		let incidents = [];
 		return $q((resolve, reject) => {
@@ -17,10 +17,6 @@ app.service("IncidentsService", function($http, $q, FIREBASE_CONFIG ) {
 		});
 	};
 
-
-
-
 return {getAllIncidents};
-
 
 });

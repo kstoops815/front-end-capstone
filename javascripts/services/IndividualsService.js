@@ -46,11 +46,6 @@ app.service("IndividualsService", function($http, $q, AuthService, FIREBASE_CONF
 		return $http.put(`${FIREBASE_CONFIG.databaseURL}/individuals/${individualId}.json`, JSON.stringify(individual));
 	};
 
-
-
-
 return {getAllIndividuals, postIndividual, createIndividualObject, getSingleIndividual, deleteIndividual, updateIndividual};
-
-
 
 });

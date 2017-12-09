@@ -70,6 +70,17 @@
             "description": "Kendrick pinned Maximus against the wall in the school bathroom and threatened to beat him up the next time Maximus looked at him.",
             "actionTaken": "reported to school officials",
             "actionNotes": "Mother called Ms. Lester to report the incident. Ms. Lester stated that she would make sure they were not in the bathroom together."
+        },
+        "incident3": {
+            "reporterId": "amPR11gYFhfxYnQ423V3lJwma7u1",
+            "victimId": "individual0",
+            "offenderId": "individual3",
+            "type": "verbal",
+            "date": "12-1-17",
+            "time": "1:00",
+            "description": "Maximus keeps pushing Matthias down as he is walking home from school.",
+            "actionTaken": "spoke to Maximus",
+            "actionNotes": "Maximus admitted to this behavior. He was told to stay away from Matthias."
         }
     }
 }
