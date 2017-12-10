@@ -1,11 +1,10 @@
 <h1 class="pageHeading">My Dashboard</h1>
 
 <div class="container-fluid individuals">
-	<div class="addNewIndividualButton">
+	<div>
 		<h2 class="sectionHeading">Individuals</h2>
 		<button class="btn btn-default add" ng-click="goToAddIndividualForm()">Add New Individual To Track</button>	
-	</div>
-	
+	</div>	
 	<div ng-repeat="individual in individuals" class="col-sm-2 individual">
 		<div class="thumbnail">
 			<button class="btn btn-default delete" ng-click="deleteIndividual(individual.id)" data-toggle="tooltip" data-placement="top" title="Delete Individual"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
@@ -25,7 +24,10 @@
 </div>
 
 <div class="container-fluid incidents">
-	<h2 class="sectionHeading">Incidents</h2>	
+	<div>
+		<h2 class="sectionHeading">Incidents</h2>
+		<button class="btn btn-default add" ng-click="goToAddIncidentForm()">Add New Incident</button>
+	</div>
 	<div ng-repeat="incident in incidents" class="col-sm-2 incident">
 		<div class="thumbnail">
 			<button class="btn btn-default delete" data-toggle="tooltip" data-placement="top" title="Delete Incident"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
