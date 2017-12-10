@@ -41,7 +41,9 @@ app.controller("HomeCtrl", function($location, $scope, AuthService, IncidentsSer
         $location.path("/individuals/new");
     };
 
-
+    $scope.goToAddIncidentForm = () => {
+        $location.path("/incidents/new");
+    };
 
 
 });
