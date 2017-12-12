@@ -6,11 +6,10 @@ app.controller("EditIndividualCtrl", function($location, $routeParams, $scope, I
 		IndividualsService.getSingleIndividual($routeParams.id).then((results) => {
 		$scope.individual = results.data;
 		}).catch((error) => {
-			console.log("error in EditIndividualCtrl, getAllIndividuals", error);
+			console.log("error in EditIndividualCtrl, getSingleIndividual", error);
 		});
 	};	
 	
-
 	getIndividualInfo();
 
   $scope.editIndividual = (individual, individualId) => {
@@ -21,10 +20,5 @@ app.controller("EditIndividualCtrl", function($location, $routeParams, $scope, I
 			console.log("error in editIndividual", error);
 		});
 	};
-
-
-
-
-
 
 });

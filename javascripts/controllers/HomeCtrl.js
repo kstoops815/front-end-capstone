@@ -69,5 +69,8 @@ app.controller("HomeCtrl", function($location, $scope, AuthService, IncidentsSer
 		$location.path("/incidents/new");
 	};
 
+	$scope.editIncidentInfo = (incidentId) => {
+		$location.path(`/incidents/edit/${incidentId}`);
+	};
 
 });
