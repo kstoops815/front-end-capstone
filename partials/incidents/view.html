@@ -2,7 +2,7 @@
 	<h2 class="sectionHeading">Incidents</h2>	
 	<div ng-repeat="incident in incidents" class="col-sm-2 incident">
 		<div class="thumbnail">
-			<button class="btn btn-default delete" data-toggle="tooltip" data-placement="top" title="Delete Incident"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+			<button class="btn btn-default delete" ng-click="deleteIncident(incident.id)" data-toggle="tooltip" data-placement="top" title="Delete Incident"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
 			<button class="btn btn-default pencil" data-toggle="tooltip" data-placement="top" title="Edit Incident"><i class="fa fa-pencil" aria-hidden="true"></i></button>
 			<h4>{{incident.date}}</h4>
 		</div>
