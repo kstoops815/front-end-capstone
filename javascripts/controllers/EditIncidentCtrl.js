@@ -1,11 +1,21 @@
 "use strict";
 
-app.controller("EditIncidentCtrl", function($location, $routeParams, $scope, IncidentsService){
+app.controller("EditIncidentCtrl", function($location, $routeParams, $scope, AuthService, IncidentsService, IndividualsService){
+	$scope.types = ["cyber", "emotional", "phsyical", "sexual", "verbal", "other"];
+	$scope.actionTakens = ["reported to school officials", "reported to police", "conferenced with offender", "spoke to offender's parents"];
+	$scope.individuals = [];
+	$scope.victimName = "";
+	$scope.offenderName = "";
+
 	const getIncidentInfo = () => {
-		IncidentsService.getSingleIncident($routeParams.id).then((results) => {
-			console.log("results in getIncidentInfo", results);
-		$scope.incident = results.data;
-		console.log("scope.incident", $scope.incident);
+		IncidentsService.getSingleIncident($routeParams.id).then((incident) => {
+				IndividualsService.getSingleIndividual(incident.data.victimId).then((victim) => {
+					$scope.victimName = `${victim.data.firstName} ${victim.data.lastName}`;
+					IndividualsService.getSingleIndividual(incident.data.offenderId).then((offender) => {
+						$scope.offenderName = `${offender.data.firstName} ${offender.data.lastName}`;
+					});
+				});
+			$scope.incident = incident.data;
 		}).catch((error) => {
 			console.log("error in EditIncidentCtrl, getSingleIncident", error);
 		});
@@ -15,11 +25,39 @@ app.controller("EditIncidentCtrl", function($location, $routeParams, $scope, Inc
 
   $scope.editIncident = (incident, incidentId) => {
 		let incidentToEdit = IncidentsService.createNewIncidentObject(incident);
-		console.log("incidentToEdit", incidentToEdit);
 		IncidentsService.updateIncident(incidentToEdit, $routeParams.id).then(() => {
 			$location.path("incidents/view");
 		}).catch((error) => {
 			console.log("error in editIncident", error);
 		});
 	};
+
+	$scope.selectType = (newType) => {
+		$scope.incident.type = newType;
+	};
+
+	$scope.selectActionTaken = (actionTaken) => {
+		$scope.incident.actionTaken = actionTaken;
+	};
+	
+$scope.selectVictim = (victim) => {
+	$scope.incident.victimId = victim.id;
+	$scope.incident.victimName = `${victim.firstName} ${victim.lastName}`;
+};
+
+$scope.selectOffender = (offender) => {
+	$scope.incident.offenderId = offender.id;
+	$scope.incident.offenderName = `${offender.firstName} ${offender.lastName}`;
+};
+
+	const getIndividuals = () => {
+		IndividualsService.getAllIndividuals(AuthService.getCurrentUid()).then((results) => {
+			$scope.individuals = results;
+		}).catch((error) => {
+			console.log("error in show showIndividuals", error);
+		});
+	};
+
+	getIndividuals();
+
 });
