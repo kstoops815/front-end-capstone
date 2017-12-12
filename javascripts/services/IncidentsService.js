@@ -25,7 +25,9 @@ app.service("IncidentsService", function($http, $q, AuthService, FIREBASE_CONFIG
 			"time": newIncident.time,
 			"description": newIncident.description,
 			"actionTaken": newIncident.actionTaken,
-			"actionNotes": newIncident.actionNotes
+			"actionNotes": newIncident.actionNotes,
+			"victimId": newIncident.victimId,
+			"offenderId": newIncident.offenderId
 		};
 	};
 
