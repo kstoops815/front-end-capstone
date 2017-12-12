@@ -18,6 +18,14 @@ app.controller("IncidentsCtrl", function($location, $scope, AuthService, Inciden
 	};
 
 	showIncidents();
+
+	$scope.deleteIncident = (incidentId) => {
+		IncidentsService.deleteIncident(incidentId).then(() => {
+			showIncidents();
+		}).catch((error) => {
+			console.log("error in deleteIncident", error);
+		});
+	};
 	
 	$scope.goToAddIndividualForm = () => {
 		$location.path("/individuals/new");

@@ -1,7 +1,7 @@
 "use strict";
 
 app.controller("HomeCtrl", function($location, $scope, AuthService, IncidentsService, IndividualsService){
-	//Individiuals get, edit, and delete functions
+	//Individiuals get, add, edit, and delete functions
 	const showIndividuals = () => {
 		IndividualsService.getAllIndividuals(AuthService.getCurrentUid()).then((results) => {
 			$scope.individuals = results;
@@ -11,6 +11,10 @@ app.controller("HomeCtrl", function($location, $scope, AuthService, IncidentsSer
 	};
 
 	showIndividuals();
+
+	$scope.goToAddIndividualForm = () => {
+		$location.path("/individuals/new");
+};
 
 	$scope.editIndividualInfo = (individualId) => {
 		$location.path(`/individuals/edit/${individualId}`);
@@ -24,7 +28,7 @@ app.controller("HomeCtrl", function($location, $scope, AuthService, IncidentsSer
 		});
 	};
 
-	//Incidents get, edit, and delete functions
+	//Incidents get, add, edit, and delete functions
 	$scope.incidents = [];
 
 	const showIncidents = () => {
@@ -45,9 +49,25 @@ app.controller("HomeCtrl", function($location, $scope, AuthService, IncidentsSer
 
 	showIncidents();
 
-	$scope.goToAddIndividualForm = () => {
-        $location.path("/individuals/new");
-    };
+	$scope.deleteIncident = (incidentId) => {
+		IncidentsService.deleteIncident(incidentId).then(() => {
+			showIncidents();
+		}).catch((error) => {
+			console.log("error in deleteIncident", error);
+		});
+	};
+
+	$scope.deleteIncident = (incidentId) => {
+		IncidentsService.deleteIncident(incidentId).then(() => {
+			showIncidents();
+		}).catch((error) => {
+			console.log("error in deleteIncident", error);
+		});
+	};
+
+	$scope.goToAddIncidentForm = () => {
+		$location.path("/incidents/new");
+	};
 
 
 });
