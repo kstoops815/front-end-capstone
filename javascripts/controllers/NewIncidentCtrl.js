@@ -1,13 +1,15 @@
 "use strict";
 
 app.controller("NewIncidentCtrl", function($location, $scope, AuthService, IncidentsService, IndividualsService){
-	$scope.newIncident = [];
+	$scope.newIncident = {};
 	$scope.types = ["cyber", "emotional", "phsyical", "sexual", "verbal", "other"];
 	$scope.actionTakens = ["reported to school officials", "reported to police", "conferenced with offender", "spoke to offender's parents"];
-	$scope.names = [];
+	$scope.individuals = [];
+	$scope.victimName = "";
+	$scope.offenderName = "";
 
-	$scope.saveNewIncident = (incident) => {
-		let newIncident = IncidentsService.createNewIncidentObject(incident);
+	$scope.saveNewIncident = () => {
+		let newIncident = IncidentsService.createNewIncidentObject($scope.newIncident);
 		IncidentsService.postIncident(newIncident).then(() => {
 			$location.path("incidents/view");
 		}).catch((error) => {
@@ -15,21 +17,27 @@ app.controller("NewIncidentCtrl", function($location, $scope, AuthService, Incid
 		});
 	};
 
-	$scope.selectType = (type) => {
-    	$scope.newIncident.type = type;
-  	};
+	$scope.selectType = (newType) => {
+    	$scope.newIncident.type = newType;
+		};
 
   	$scope.selectActionTaken = (actionTaken) => {
     	$scope.newIncident.actionTaken = actionTaken;
-  	};
+		};
+		
+	$scope.selectVictim = (victim) => {
+		$scope.newIncident.victimId = victim.id;
+		$scope.victimName = `${victim.firstName} ${victim.lastName}`;
+	};
+
+	$scope.selectOffender = (offender) => {
+		$scope.newIncident.offenderId = offender.id;
+		$scope.offenderName = `${offender.firstName} ${offender.lastName}`;
+	};
 
 		const getIndividuals = () => {
 			IndividualsService.getAllIndividuals(AuthService.getCurrentUid()).then((results) => {
-				let allIndividuals = results;
-				
-				allIndividuals.forEach((individual) => {
-					$scope.names.push(individual.firstName + " " + individual.lastName);
-				});
+				$scope.individuals = results;
 			}).catch((error) => {
 				console.log("error in show showIndividuals", error);
 			});
