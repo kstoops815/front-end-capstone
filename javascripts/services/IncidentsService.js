@@ -39,11 +39,15 @@ app.service("IncidentsService", function($http, $q, AuthService, FIREBASE_CONFIG
 		return $http.delete(`${FIREBASE_CONFIG.databaseURL}/incidents/${incidentId}.json`);
 	};
 
+	const getSingleIncident = (incidentId) => {
+		return $http.get(`${FIREBASE_CONFIG.databaseURL}/incidents/${incidentId}.json`);
+	};
+
 	const updateIncident = (incident, incidentId) => {
 		return $http.put(`${FIREBASE_CONFIG.databaseURL}/incidents/${incidentId}.json`, JSON.stringify(incident));
 	};
 
 
-return {getAllIncidents, createNewIncidentObject, postIncident, deleteIncident, updateIncident};
+return {getAllIncidents, createNewIncidentObject, postIncident, deleteIncident, updateIncident, getSingleIncident};
 
 });
