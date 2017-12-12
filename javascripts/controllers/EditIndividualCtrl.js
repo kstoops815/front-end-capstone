@@ -21,9 +21,4 @@ app.controller("EditIndividualCtrl", function($location, $routeParams, $scope, I
 		});
 	};
 
-
-
-
-
-
 });

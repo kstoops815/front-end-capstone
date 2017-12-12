@@ -73,5 +73,4 @@ app.controller("HomeCtrl", function($location, $scope, AuthService, IncidentsSer
 		$location.path(`/incidents/edit/${incidentId}`);
 	};
 
-
 });
