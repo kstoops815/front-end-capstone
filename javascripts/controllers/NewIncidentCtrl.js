@@ -45,5 +45,31 @@ app.controller("NewIncidentCtrl", function($location, $scope, AuthService, Incid
 
 		getIndividuals();
 
-
+		$scope.today = function() {
+			$scope.newIncident.date = new Date();
+		};
+		$scope.today();
+	
+		$scope.clear = function() {
+			$scope.newIncident.date = null;
+		};
+	
+	
+		$scope.dateOptions = {
+			formatYear: 'yy',
+			maxDate: new Date(2020, 5, 22),
+			minDate: new Date(2015, 1, 1),
+			startingDay: 1
+		};
+	
+		$scope.open2 = () => {
+			$scope.popup2.opened = true;
+		};
+	
+		$scope.format = 'shortDate';
+	
+		$scope.popup2 = {
+			opened: false
+		};
+	
 });
