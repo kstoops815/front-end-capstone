@@ -11,7 +11,7 @@ app.controller("NewIncidentCtrl", function($location, $scope, AuthService, Incid
 	$scope.saveNewIncident = () => {
 		let newIncident = IncidentsService.createNewIncidentObject($scope.newIncident);
 		IncidentsService.postIncident(newIncident).then(() => {
-			$location.path("incidents/view");
+			$location.path("/incidents");
 		}).catch((error) => {
 			console.log("error in saveNewIncident", error);
 		});
