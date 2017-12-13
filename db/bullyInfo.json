@@ -5,8 +5,8 @@
             "firstName": "Matthias",
             "lastName": "Ward",
             "age": 12,
-            "gender": "male",
-            "race": "biracial",
+            "gender": "Male",
+            "race": "Biracial",
             "notes": "Matthias is a biracial male who is being talked about and taunted by his classmates."
         },
         "individual1": {
@@ -14,8 +14,8 @@
             "firstName": "Sue",
             "lastName": "Smith",
             "age": 13,
-            "gender": "female",
-            "race": "african_american",
+            "gender": "Female",
+            "race": "Black or African American",
             "notes": "Sue is a black female who is verbally abusing Matthias."
         },
         "individual2": {
@@ -23,8 +23,8 @@
             "firstName": "Kendrick",
             "lastName": "Butthole",
             "age": 16,
-            "gender": "male",
-            "race": "african_american",
+            "gender": "Male",
+            "race": "Black or African American",
             "notes": "Kendrick has been phsyically abusing Maximus at school."
         },
         "individual3": {
@@ -32,8 +32,8 @@
             "firstName": "Maximus",
             "lastName": "Ward",
             "age": 15,
-            "gender": "male",
-            "race": "biracial",
+            "gender": "Male",
+            "race": "Biracial",
             "notes": "Maximus is a biracial male who is being phsyically assaulted by another male."
         }
     },
