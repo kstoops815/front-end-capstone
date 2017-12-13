@@ -1,20 +1,23 @@
 <div class="container-fluid incidents">
-	<h2 class="sectionHeading">Incidents</h2>	
-	<div ng-repeat="incident in incidents" class="col-sm-2 incident">
-		<div class="thumbnail">
-			<button class="btn btn-default delete" ng-click="deleteIncident(incident.id)" data-toggle="tooltip" data-placement="top" title="Delete Incident"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-			<button class="btn btn-default pencil" ng-click="editIncidentInfo(incident.id)" data-toggle="tooltip" data-placement="top" title="Edit Incident"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-			<h4>{{incident.date}}</h4>
-		</div>
-		<div class=" incidentQuickView">
-			<p><strong>Victim:</strong> {{incident.victimName}}</p>
-			<p><strong>Offender:</strong> {{incident.offenderName}}</p>
-			<p><strong>Type:</strong> {{incident.type}}</p>
-			<p><strong>Date:</strong> {{incident.date}}</p>
-			<p><strong>Time:</strong> {{incident.time}}</p>
-			<p><strong>Description:</strong> {{incident.description}}</p>
-			<p><strong>Action Taken:</strong> {{incident.actionTaken}}</p>
-			<p><strong>Action Notes:</strong> {{incident.actionNotes}}</p>
-		</div>
+	<div>
+		<h2 class="sectionHeading">Incidents</h2>	
+		<button class="btn btn-default add" ng-click="goToAddIncidentForm()">Add New Incident</button>
 	</div>
+		<div ng-repeat="incident in incidents" class="col-sm-2 incident">
+			<div class="thumbnail">
+				<button class="btn btn-default delete" ng-click="deleteIncident(incident.id)" data-toggle="tooltip" data-placement="top" title="Delete Incident"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+				<button class="btn btn-default pencil" ng-click="editIncidentInfo(incident.id)" data-toggle="tooltip" data-placement="top" title="Edit Incident"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+				<h4>{{incident.date}}</h4>
+			</div>
+			<div class=" incidentQuickView">
+				<p><strong>Victim:</strong> {{incident.victimName}}</p>
+				<p><strong>Offender:</strong> {{incident.offenderName}}</p>
+				<p><strong>Type:</strong> {{incident.type}}</p>
+				<p><strong>Date:</strong> {{incident.date}}</p>
+				<p><strong>Time:</strong> {{incident.time}}</p>
+				<p><strong>Description:</strong> {{incident.description}}</p>
+				<p><strong>Action Taken:</strong> {{incident.actionTaken}}</p>
+				<p><strong>Action Notes:</strong> {{incident.actionNotes}}</p>
+			</div>
+		</div>
 </div>
