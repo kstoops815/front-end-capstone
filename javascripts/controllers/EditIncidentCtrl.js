@@ -1,7 +1,7 @@
 "use strict";
 
 app.controller("EditIncidentCtrl", function($location, $routeParams, $scope, AuthService, IncidentsService, IndividualsService){
-	$scope.types = ["cyber", "emotional", "phsyical", "sexual", "verbal", "other"];
+	$scope.types = ["cyber", "emotional", "physical", "sexual", "verbal", "other"];
 	$scope.actionTakens = ["reported to school officials", "reported to police", "conferenced with offender", "spoke to offender's parents", "none", "other"];
 	$scope.individuals = [];
 	$scope.victimName = "";

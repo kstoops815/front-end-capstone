@@ -2,7 +2,7 @@
 
 app.controller("NewIncidentCtrl", function($location, $scope, AuthService, IncidentsService, IndividualsService){
 	$scope.newIncident = {};
-	$scope.types = ["cyber", "emotional", "phsyical", "sexual", "verbal", "other"];
+	$scope.types = ["cyber", "emotional", "physical", "sexual", "verbal", "other"];
 	$scope.actionTakens = ["reported to school officials", "reported to police", "conferenced with offender", "spoke to offender's parents", "none", "other"];
 	$scope.individuals = [];
 	$scope.victimName = "";
@@ -47,6 +47,8 @@ app.controller("NewIncidentCtrl", function($location, $scope, AuthService, Incid
 
 		$scope.today = function() {
 			$scope.newIncident.date = new Date();
+			console.log("new Date", $scope.newIncident.date);
+
 		};
 		$scope.today();
 	
