@@ -4,6 +4,7 @@ app.controller("IncidentsCtrl", function($location, $scope, AuthService, Inciden
 	const showIncidents = () => {
 		IncidentsService.getAllIncidents(AuthService.getCurrentUid()).then((results) => {
 			results.forEach((incident) => {
+				incident.date = new Date(incident.date);
 				IndividualsService.getSingleIndividual(incident.victimId).then((victim) => {
 					incident.victimName = `${victim.data.firstName} ${victim.data.lastName}`;
 					IndividualsService.getSingleIndividual(incident.offenderId).then((offender) => {
@@ -12,6 +13,7 @@ app.controller("IncidentsCtrl", function($location, $scope, AuthService, Inciden
 				});
 			});
 			$scope.incidents = results;
+			console.log("incidents", $scope.incidents);
 		}).catch((error) => {
 			console.log("error in showIncidents", error);
 		});

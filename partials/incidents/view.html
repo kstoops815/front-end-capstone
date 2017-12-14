@@ -13,7 +13,7 @@
 				<p><strong>Victim:</strong> {{incident.victimName}}</p>
 				<p><strong>Offender:</strong> {{incident.offenderName}}</p>
 				<p><strong>Type:</strong> {{incident.type}}</p>
-				<p><strong>Date:</strong> {{incident.date}}</p>
+				<p><strong>Date:</strong> {{incident.date | date:'MM/dd/yyyy'}}</p>
 				<p><strong>Time:</strong> {{incident.time}}</p>
 				<p><strong>Description:</strong> {{incident.description}}</p>
 				<p><strong>Action Taken:</strong> {{incident.actionTaken}}</p>

@@ -9,10 +9,20 @@
 			<span ng-show="newIncident.type">Type of Incident: {{newIncident.type}}</span>
 		</div>
 	</div>
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="addDate">Date</label>
     <input type="text" id="addDate" ng-model="newIncident.date" placeholder="Incident Date" required>
-  </div>
+	</div> -->
+	<div class="col-md-6">
+			<label for="addDate">Date</label>
+			<p class="input-group">
+				<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="newIncident.date" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+				<span class="input-group-btn">
+					<button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+				</span>
+			</p>
+		</div>
+	</div>
   <div class="form-group">
     <label for="addDescription">Description</label>
     <textarea class="form-control" rows="3" ng-model="newIncident.description">Description</textarea>
