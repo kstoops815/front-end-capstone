@@ -6,6 +6,8 @@ app.controller("EditIncidentCtrl", function($location, $routeParams, $scope, Aut
 	$scope.individuals = [];
 	$scope.victimName = "";
 	$scope.offenderName = "";
+	$scope.incidentTime = new Date();
+	$scope.incident = {};
 
 	const getIncidentInfo = () => {
 		IncidentsService.getSingleIncident($routeParams.id).then((incident) => {
@@ -13,6 +15,8 @@ app.controller("EditIncidentCtrl", function($location, $routeParams, $scope, Aut
 					$scope.victimName = `${victim.data.firstName} ${victim.data.lastName}`;
 					IndividualsService.getSingleIndividual(incident.data.offenderId).then((offender) => {
 						$scope.offenderName = `${offender.data.firstName} ${offender.data.lastName}`;
+						$scope.incidentTime = new Date(incident.data.time);
+						$scope.incidentDate = new Date(incident.data.date);
 					});
 				});
 			$scope.incident = incident.data;
@@ -59,5 +63,34 @@ $scope.selectOffender = (offender) => {
 	};
 
 	getIndividuals();
+
+	$scope.today = function() {
+		$scope.incident.date = new Date();
+
+	};
+	$scope.today();
+
+	$scope.clear = function() {
+		$scope.incident.date = null;
+	};
+
+
+	$scope.dateOptions = {
+		formatYear: 'yy',
+		maxDate: new Date(2020, 5, 22),
+		minDate: new Date(2015, 1, 1),
+		startingDay: 1
+	};
+
+	$scope.open2 = () => {
+		$scope.popup2.opened = true;
+	};
+
+	$scope.format = 'shortDate';
+
+	$scope.popup2 = {
+		opened: false
+	};
+
 
 });
