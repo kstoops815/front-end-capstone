@@ -13,7 +13,6 @@ app.controller("IncidentsCtrl", function($location, $scope, AuthService, Inciden
 				});
 			});
 			$scope.incidents = results;
-			console.log("incidents", $scope.incidents);
 		}).catch((error) => {
 			console.log("error in showIncidents", error);
 		});

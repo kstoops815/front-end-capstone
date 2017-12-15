@@ -74,7 +74,6 @@ $scope.selectOffender = (offender) => {
 		$scope.incident.date = null;
 	};
 
-
 	$scope.dateOptions = {
 		formatYear: 'yy',
 		maxDate: new Date(2020, 5, 22),
