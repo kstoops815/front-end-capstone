@@ -49,16 +49,14 @@ app.controller("NewIncidentCtrl", function($location, $scope, AuthService, Incid
 
 		$scope.today = function() {
 			$scope.newIncident.date = new Date();
-			console.log("new Date", $scope.newIncident.date);
-
 		};
+
 		$scope.today();
 	
 		$scope.clear = function() {
 			$scope.newIncident.date = null;
 		};
-	
-	
+		
 		$scope.dateOptions = {
 			formatYear: 'yy',
 			maxDate: new Date(2020, 5, 22),
