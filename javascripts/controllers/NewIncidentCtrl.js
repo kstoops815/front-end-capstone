@@ -7,8 +7,10 @@ app.controller("NewIncidentCtrl", function($location, $scope, AuthService, Incid
 	$scope.individuals = [];
 	$scope.victimName = "";
 	$scope.offenderName = "";
+	$scope.incidentTime = new Date();
 
 	$scope.saveNewIncident = () => {
+		$scope.newIncident.time = $scope.incidentTime;
 		let newIncident = IncidentsService.createNewIncidentObject($scope.newIncident);
 		IncidentsService.postIncident(newIncident).then(() => {
 			$location.path("/incidents");

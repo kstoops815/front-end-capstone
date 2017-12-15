@@ -43,8 +43,8 @@
             "victimId": "individual0",
             "offenderId": "individual1",
             "type": "verbal",
-            "date": "12-1-17",
-            "time": "1:00",
+            "date": "2010-05-21T22:12:00.122Z",
+            "time": "2010-05-21T22:12:00.122Z",
             "description": "Matthias's friend called him a baby.",
             "actionTaken": "reported to principal",
             "actionNotes": "Mother called Mr. Penner on 12-1-17 to inform him of what happened. He said he would move the other kid to a different class."
@@ -54,8 +54,8 @@
             "victimId": "individual3",
             "offenderId": "individual2",
             "type": "physical",
-            "date": "10-31-17",
-            "time": "1:01",
+            "date": "2011-09-12T20:15:00.761Z",
+            "time": "2011-09-12T20:15:00.761Z",
             "description": "Maximus was pushed down in the hallway as he walked to class. He fell into another student's notebook and cut his face directly below his left eye.",
             "actionTaken": "reported to school officials",
             "actionNotes": "Mother called Ms. Lester to report the incident. She was not understanding or helpful to the mother."
@@ -65,8 +65,8 @@
             "victimId": "individual3",
             "offenderId": "individual2",
             "type": "cyber",
-            "date": "11-7-17",
-            "time": "1:02",
+            "date": "2012-03-10T02:20:04.682Z",
+            "time": "2012-03-10T02:20:04.682Z",
             "description": "Kendrick pinned Maximus against the wall in the school bathroom and threatened to beat him up the next time Maximus looked at him.",
             "actionTaken": "reported to school officials",
             "actionNotes": "Mother called Ms. Lester to report the incident. Ms. Lester stated that she would make sure they were not in the bathroom together."
@@ -76,8 +76,8 @@
             "victimId": "individual0",
             "offenderId": "individual3",
             "type": "verbal",
-            "date": "12-1-17",
-            "time": "1:00",
+            "date": "2013-04-25T04:15:10.888Z",
+            "time": "2013-04-25T04:15:10.888Z",
             "description": "Maximus keeps pushing Matthias down as he is walking home from school.",
             "actionTaken": "spoke to Maximus",
             "actionNotes": "Maximus admitted to this behavior. He was told to stay away from Matthias."
