@@ -16,7 +16,6 @@ app.controller("EditIncidentCtrl", function($location, $routeParams, $scope, Aut
 					IndividualsService.getSingleIndividual(incident.data.offenderId).then((offender) => {
 						$scope.offenderName = `${offender.data.firstName} ${offender.data.lastName}`;
 						$scope.incidentTime = new Date(incident.data.time);
-						$scope.incidentDate = new Date(incident.data.date);
 					});
 				});
 			$scope.incident = incident.data;
@@ -66,13 +65,14 @@ $scope.selectOffender = (offender) => {
 
 	$scope.today = function() {
 		$scope.incident.date = new Date();
-
 	};
+	
 	$scope.today();
 
 	$scope.clear = function() {
 		$scope.incident.date = null;
 	};
+
 
 	$scope.dateOptions = {
 		formatYear: 'yy',
