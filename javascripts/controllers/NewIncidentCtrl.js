@@ -11,12 +11,14 @@ app.controller("NewIncidentCtrl", function($location, $scope, AuthService, Incid
 
 	$scope.saveNewIncident = () => {
 		$scope.newIncident.time = $scope.incidentTime;
+		
 		let newIncident = IncidentsService.createNewIncidentObject($scope.newIncident);
 		IncidentsService.postIncident(newIncident).then(() => {
 			$location.path("/incidents");
 		}).catch((error) => {
 			console.log("error in saveNewIncident", error);
 		});
+		console.log("newIncident.time", $scope.newIncident.time);
 	};
 
 	$scope.selectType = (newType) => {
