@@ -2,7 +2,7 @@
 
 app.filter("TimeFilter", () => {
   return (dateString) => {
-    return moment(dateString).format('h:m A');    
+    return moment(dateString).format("hh:mm A");    
   };
 
 });
