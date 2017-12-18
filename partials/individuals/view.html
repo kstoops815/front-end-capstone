@@ -3,12 +3,14 @@
 		<h2 class="sectionHeading">Individuals</h2>
 		<button class="btn btn-default add" ng-click="goToAddIndividualForm()">Add New Individual To Track</button>	
 	</div>	
-	<div ng-repeat="individual in individuals" ng-click="getIncidentsForIndividual(individual.id)" class="col-sm-2 individual">
+	<div ng-repeat="individual in individuals"  class="col-sm-2 individual">
 		<div class="thumbnail">
 			<button class="btn btn-default delete" ng-click="deleteIndividual(individual.id)" data-toggle="tooltip" data-placement="top" title="Delete Individual"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
 			<button class="btn btn-default pencil" ng-click="editIndividualInfo(individual.id)" data-toggle="tooltip" data-placement="top" title="Edit Individual"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-			<h4>{{individual.firstName}}</h4>
-			<h4>{{individual.lastName}}</h4>
+			<div ng-click="getIncidentsForIndividual(individual.id)">
+				<h4>{{individual.firstName}}</h4>
+				<h4>{{individual.lastName}}</h4>
+			</div>
 		</div>
 		<div class="individualDemographic">
 			<p><strong>Age:</strong> {{individual.age}}</p>
