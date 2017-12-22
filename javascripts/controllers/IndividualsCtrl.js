@@ -33,10 +33,4 @@ app.controller("IndividualsCtrl", function($location, $scope, AuthService, Indiv
         $location.path("/individuals/new");
     };
 
-
-
-
-
-
-
-});
+	});
