@@ -10,7 +10,7 @@
 		</label>
 	</div>	
 	<uib-accordion close-others="oneAtATime">
-		<div uib-accordion-group class="panel-default" heading="{{incident.date | DateFilter}}" ng-repeat="incident in incidents | orderBy : '-date'">
+		<div uib-accordion-group class="infoHolder" heading="{{incident.date | DateFilter}}" ng-repeat="incident in incidents | orderBy : '-date'">
 			<div class="incidentQuickView">
 				<p><strong>Victim:</strong> {{incident.victimName}}</p>
 				<p><strong>Offender:</strong> {{incident.offenderName}}</p>

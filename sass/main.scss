@@ -1,4 +1,24 @@
+@import "_colors";
 @import "_navbar";
+@import "_variables";
 
+.infoHolder {
+  background-color: $silver;
+  max-width: 400px;
+  text-align: center;
+  font-size: 18px;
 
+  .panel-title {
+    font-size: 20px;
+  }
+
+  .individualDemographic {
+    @include dropdownStyle;
+  }
+
+  .incidentQuickView {
+    @include dropdownStyle;
+  }
+
+}
 
