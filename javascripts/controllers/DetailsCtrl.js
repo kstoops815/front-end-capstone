@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("DetailsCtrl", function($http, $routeParams, $scope, AuthService, FIREBASE_CONFIG, IncidentsService, IndividualsService){
+app.controller("DetailsCtrl", function($http, $location, $routeParams, $scope, AuthService, FIREBASE_CONFIG, IncidentsService, IndividualsService){
 
 	$scope.individual = {};
 	$scope.victimIncidents = [];
@@ -41,6 +41,10 @@ app.controller("DetailsCtrl", function($http, $routeParams, $scope, AuthService,
 	};
 
 	getIncidentsForSingleIndividual();
+
+	$scope.returnToIndividualsPage = () => {
+		$location.path("/individuals");
+	};
 
 });
 
