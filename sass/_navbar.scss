@@ -1,0 +1,17 @@
+@import "_colors";
+
+.navbar {
+  height: 75px;
+
+  .logo {
+    padding-bottom: 10px;
+    height: 60px;
+    width: 125px;
+  }
+}
+
+.navbar-default .navbar-nav > li > a {
+  padding-top: 40px;
+  color: $navLinks;
+  font-size: 1.25em;
+}
