@@ -8,12 +8,12 @@ This application allows users to track individuals who are involved in potential
 
 ### Tools Used
 
-AngularJS
-Bootstrap
-Sass
-Grunt
-Firebase CRUD
-Google Authentication
+* AngularJS
+* Bootstrap
+* Sass
+* Grunt
+* Firebase CRUD
+* Google Authentication
 
 ### Viewing the Application
 
