@@ -1,17 +1,17 @@
-<h1 class="pageHeading">My Dashboard</h1>
-
-<div class="container-fluid individuals">
-	<div>
-		<h2 class="sectionHeading">Individuals</h2>
-		<button class="btn btn-default add" ng-click="goToAddIndividualForm()">Add New Individual</button>	
-	</div>	
-	<div class="checkbox">
+<h1 class="pageHeading text-center">My Dashboard</h1>
+<div class="row">
+	<div class="column individuals">
+		<!-- <div> -->
+			<h2 class="sectionHeading text-center">Individuals</h2>
+			<!-- <button class="btn btn-default add" ng-click="goToAddIndividualForm()">Add New Individual</button>	
+		</div>	 -->
+		<div class="checkbox text-center">
 			<label>
-				<input type="checkbox" ng-model="oneAtATime">
+				<input type="checkbox" ng-model="oneAtATimeIndividuals">
 				Open only one at a time
 			</label>
-		</div>	
-		<uib-accordion close-others="oneAtATime">
+		</div>
+		<uib-accordion close-others="oneAtATimeIndividuals">
 			<div uib-accordion-group class="infoHolder" heading="{{individual.firstName}} {{individual.lastName}}"    ng-repeat="individual in individuals | orderBy : 'firstName'">
 				<div class="individualDemographic">
 					<p><strong>Age:</strong> {{individual.age}}</p>
@@ -19,37 +19,37 @@
 					<p><strong>Race:</strong> {{individual.race}}</p>
 					<p><strong>Notes:</strong> {{individual.notes}}</p>
 				</div>
-				<button class="btn btn-default delete" ng-click="deleteIndividual(individual.id)" data-toggle="tooltip" data-placement="top" title="Delete Individual"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-				<button class="btn btn-default pencil" ng-click="editIndividualInfo(individual.id)" data-toggle="tooltip" data-placement="top" title="Edit Individual"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+				<!-- <button class="btn btn-default delete" ng-click="deleteIndividual(individual.id)" data-toggle="tooltip" data-placement="top" title="Delete Individual"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+				<button class="btn btn-default pencil" ng-click="editIndividualInfo(individual.id)" data-toggle="tooltip" data-placement="top" title="Edit Individual"><i class="fa fa-pencil" aria-hidden="true"></i></button> -->
 			</div>
 		</uib-accordion>
-</div>
-
-<div class="container-fluid incidents">
-	<div>
-		<h2 class="sectionHeading">Incidents</h2>
-		<button class="btn btn-default add" ng-click="goToAddIncidentForm()">Add New Incident</button>
 	</div>
-	<div class="checkbox">
-		<label>
-			<input type="checkbox" ng-model="oneAtATime">
-			Open only one at a time
-		</label>
-	</div>
-	<uib-accordion close-others="oneAtATime">
-			<div uib-accordion-group class="infoHolder" heading="{{incident.date | DateFilter}}" ng-repeat="incident in incidents | orderBy : '-date'">
-				<div class="incidentQuickView">
-					<p><strong>Victim:</strong> {{incident.victimName}}</p>
-					<p><strong>Offender:</strong> {{incident.offenderName}}</p>
-					<p><strong>Type:</strong> {{incident.type}}</p>
-					<p><strong>Date:</strong> {{incident.date | DateFilter}}</p>
-					<p><strong>Time:</strong> {{incident.time | TimeFilter}}</p>
-					<p><strong>Description:</strong> {{incident.description}}</p>
-					<p><strong>Action Taken:</strong> {{incident.actionTaken}}</p>
-					<p><strong>Action Notes:</strong> {{incident.actionNotes}}</p>
+	<div class="column incidents">
+		<div>
+			<h2 class="sectionHeading text-center">Incidents</h2>
+			<!-- <button class="btn btn-default add" ng-click="goToAddIncidentForm()">Add New Incident</button> -->
+		</div>
+		<div class="checkbox text-center">
+			<label>
+				<input type="checkbox" ng-model="oneAtATimeIncidents">
+				Open only one at a time
+			</label>
+		</div>
+		<uib-accordion close-others="oneAtATimeIncidents">
+				<div uib-accordion-group class="infoHolder" heading="{{incident.date | DateFilter}}" ng-repeat="incident in incidents | orderBy : '-date'">
+					<div class="incidentQuickView">
+						<p><strong>Victim:</strong> {{incident.victimName}}</p>
+						<p><strong>Offender:</strong> {{incident.offenderName}}</p>
+						<p><strong>Type:</strong> {{incident.type}}</p>
+						<p><strong>Date:</strong> {{incident.date | DateFilter}}</p>
+						<p><strong>Time:</strong> {{incident.time | TimeFilter}}</p>
+						<p><strong>Description:</strong> {{incident.description}}</p>
+						<p><strong>Action Taken:</strong> {{incident.actionTaken}}</p>
+						<p><strong>Action Notes:</strong> {{incident.actionNotes}}</p>
+					</div>
+					<!-- <button class="btn btn-default delete" ng-click="deleteIndividual(individual.id)" data-toggle="tooltip" data-placement="top" title="Delete Individual"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+					<button class="btn btn-default pencil" ng-click="editIndividualInfo(individual.id)" data-toggle="tooltip" data-placement="top" title="Edit Individual"><i class="fa fa-pencil" aria-hidden="true"></i></button> -->
 				</div>
-				<button class="btn btn-default delete" ng-click="deleteIndividual(individual.id)" data-toggle="tooltip" data-placement="top" title="Delete Individual"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-				<button class="btn btn-default pencil" ng-click="editIndividualInfo(individual.id)" data-toggle="tooltip" data-placement="top" title="Edit Individual"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-			</div>
-		</uib-accordion>
+			</uib-accordion>
+	</div>
 </div>
