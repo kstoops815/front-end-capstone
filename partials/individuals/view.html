@@ -10,7 +10,7 @@
     </label>
 	</div>	
 	<uib-accordion close-others="oneAtATime">
-    <div uib-accordion-group class="panel-default" heading="{{individual.firstName}} {{individual.lastName}}"    ng-repeat="individual in individuals | orderBy : 'firstName'">
+    <div uib-accordion-group class="infoHolder" heading="{{individual.firstName}} {{individual.lastName}}"    ng-repeat="individual in individuals | orderBy : 'firstName'">
       <div class="individualDemographic">
 				<p><strong>Age:</strong> {{individual.age}}</p>
 				<p><strong>Gender:</strong> {{individual.gender}}</p>

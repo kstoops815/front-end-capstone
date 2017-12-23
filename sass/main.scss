@@ -1,4 +1,48 @@
+@import "_colors";
 @import "_navbar";
+@import "_variables";
 
+.infoHolder {
+  background-color: $silver;
+  max-width: 500px;
+  text-align: center;
+  font-size: 18px;
 
+  .panel-title {
+    font-size: 20px;
+  }
+
+  .individualDemographic {
+    @include dropdownStyle;
+  }
+
+  .incidentQuickView {
+    @include dropdownStyle;
+  }
+
+}
+
+.row {
+  margin: 0 auto;
+}
+
+.pageHeading {
+  padding-top: 10px;
+  margin-top: -20px;
+}
+
+.column {
+  float: left;
+  width: 40%;
+  padding-left: 10%;
+  justify-content: center;
+  margin: 2%;
+
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
