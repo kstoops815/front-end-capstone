@@ -1,8 +1,6 @@
 "use strict";
 
 app.controller("HomeCtrl", function($location, $scope, AuthService, IncidentsService, IndividualsService){
-	// $scope.oneAtATimeIndividuals = true;
-	// $scope.oneAtATimeIncidents = true;
 	//Individiuals get, add, edit, and delete functions
 	const showIndividuals = () => {
 		IndividualsService.getAllIndividuals(AuthService.getCurrentUid()).then((results) => {
