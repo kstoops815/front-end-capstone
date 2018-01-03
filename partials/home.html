@@ -1,10 +1,7 @@
 <h1 class="pageHeading text-center">My Dashboard</h1>
 <div class="row">
 	<div class="column individuals">
-		<!-- <div> -->
-			<h2 class="sectionHeading text-center">Individuals</h2>
-			<!-- <button class="btn btn-default add" ng-click="goToAddIndividualForm()">Add New Individual</button>	
-		</div>	 -->
+		<h2 class="sectionHeading text-center">Individuals</h2>	
 		<div class="checkbox text-center">
 			<label>
 				<input type="checkbox" ng-model="oneAtATimeIndividuals">
@@ -19,8 +16,7 @@
 					<p><strong>Race:</strong> {{individual.race}}</p>
 					<p><strong>Notes:</strong> {{individual.notes}}</p>
 				</div>
-				<!-- <button class="btn btn-default delete" ng-click="deleteIndividual(individual.id)" data-toggle="tooltip" data-placement="top" title="Delete Individual"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-				<button class="btn btn-default pencil" ng-click="editIndividualInfo(individual.id)" data-toggle="tooltip" data-placement="top" title="Edit Individual"><i class="fa fa-pencil" aria-hidden="true"></i></button> -->
+				<button class="btn btn-default info" ng-click="getIncidentsForIndividual(individual.id)" data-toggle="tooltip" data-placement="top" title="See Incidents"><i class="fa fa-info-circle" aria-hidden="true"></i></button>
 			</div>
 		</uib-accordion>
 	</div>

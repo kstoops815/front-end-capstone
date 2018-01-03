@@ -3,14 +3,9 @@
 		<h2 class="sectionHeading">Incidents</h2>	
 		<button class="btn btn-default add" ng-click="goToAddIncidentForm()">Add New Incident</button>
 	</div>
-	<div class="checkbox">
-		<label>
-			<input type="checkbox" ng-model="oneAtATime">
-			Open only one at a time
-		</label>
-	</div>	
-	<uib-accordion close-others="oneAtATime">
-		<div uib-accordion-group class="panel-default" heading="{{incident.date | DateFilter}}" ng-repeat="incident in incidents | orderBy : '-date'">
+	<div ng-repeat="incident in incidents | orderBy : '-date'" class="col-sm-3 incident">
+		<div class="thumbnail text-center">
+			<h4>{{incident.date | DateFilter}}</h4>
 			<div class="incidentQuickView">
 				<p><strong>Victim:</strong> {{incident.victimName}}</p>
 				<p><strong>Offender:</strong> {{incident.offenderName}}</p>
@@ -24,5 +19,5 @@
 			<button class="btn btn-default delete" ng-click="deleteIndividual(individual.id)" data-toggle="tooltip" data-placement="top" title="Delete Individual"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
 			<button class="btn btn-default pencil" ng-click="editIndividualInfo(individual.id)" data-toggle="tooltip" data-placement="top" title="Edit Individual"><i class="fa fa-pencil" aria-hidden="true"></i></button>
 		</div>
-	</uib-accordion>
+	</div>
 </div>

@@ -59,12 +59,8 @@ app.controller("HomeCtrl", function($location, $scope, AuthService, IncidentsSer
 		});
 	};
 
-	$scope.deleteIncident = (incidentId) => {
-		IncidentsService.deleteIncident(incidentId).then(() => {
-			showIncidents();
-		}).catch((error) => {
-			console.log("error in deleteIncident", error);
-		});
+	$scope.getIncidentsForIndividual = (individualId) => {
+		$location.path(`/individuals/details/${individualId}`);
 	};
 
 	$scope.goToAddIncidentForm = () => {
