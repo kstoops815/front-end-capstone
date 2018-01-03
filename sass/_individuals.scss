@@ -1,23 +1,49 @@
-.btn > .add {
-  justify-self: left;
 
+.addNewIndividualButton {
+  margin: 20px;
+
+  .btn > .add {
+    justify-self: left;
+  }
+}
+
+.sectionHeading {
+  margin-left: 20px;
 }
 
 .thumbnail {
   background-color: $silver;
-  height: 300px;
+  height: 360px;
+  padding-left: 10px;
+  padding-right: 10px;
 
   .name {
-    padding-bottom: 10px;
-    margin-bottom: 25px;
+    font-size: 25px;
+    
+  }
+
+  .buttons {
+    margin-bottom: 10px;
   }
 }
 
 .individualDemographic {
   @include dropdownStyle;
-  height: 175px;
+  height: 250px;
   padding-left: 2%;
   padding-right: 2%;
   padding-top: 2%;
   margin-bottom: -15px;
+  overflow: scroll;
+
+  p {
+    max-width: 450px;
+    overflow-x: hidden;
+    font-size: 16px;
+  }
+}
+
+.incidentQuickView {
+  @extend .individualDemographic;
+  margin: 50px;
 }
