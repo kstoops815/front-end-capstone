@@ -2,6 +2,7 @@
 @import "_navbar";
 @import "_variables";
 @import "_individuals";
+@import "_incidents";
 
 .infoHolder {
   background-color: $silver;
@@ -13,22 +14,22 @@
     font-size: 20px;
   }
 
-  .individualDemographic {
-    @include dropdownStyle;
-    margin-bottom: 2%;
-    overflow: scroll;
-  }
+//   .individualDemographic {
+//     @include dropdownStyle;
+//     margin-bottom: 2%;
+//     overflow: scroll;
+//   }
 
-  .incidentQuickView {
-    @include dropdownStyle;
-    overflow: scroll;
+//   .incidentQuickView {
+//     @include dropdownStyle;
+//     overflow: scroll;
 
-    p {
-      max-width: 450px;
-      overflow-wrap: inherit;
-      overflow-x: wrap;
-    }
-  }
+//     // p {
+//     //   max-width: 450px;
+//     //   overflow-wrap: inherit;
+//     //   overflow-x: wrap;
+//     // }
+//   }
 }
 
 .row {
@@ -54,4 +55,3 @@
   display: table;
   clear: both;
 }
-

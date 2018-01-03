@@ -1,11 +1,5 @@
+@import "_variables";
 
-.addNewIndividualButton {
-  margin: 20px;
-
-  .btn > .add {
-    justify-self: left;
-  }
-}
 
 .sectionHeading {
   margin-left: 20px;
@@ -27,13 +21,13 @@
   }
 }
 
-.individualDemographic {
+.incidentQuickView {
   @include dropdownStyle;
-  height: 250px;
+  height: 350px;
   padding-left: 2%;
   padding-right: 2%;
   padding-top: 2%;
-  margin-bottom: 15px;
+  margin-bottom: -15px;
   overflow: scroll;
 
   p {
@@ -42,4 +36,3 @@
     font-size: 16px;
   }
 }
-
