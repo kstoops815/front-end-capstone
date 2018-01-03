@@ -1,6 +1,7 @@
 @import "_colors";
 @import "_navbar";
 @import "_variables";
+@import "_individuals";
 
 .infoHolder {
   background-color: $silver;
@@ -14,12 +15,20 @@
 
   .individualDemographic {
     @include dropdownStyle;
+    margin-bottom: 2%;
+    overflow: scroll;
   }
 
   .incidentQuickView {
     @include dropdownStyle;
-  }
+    overflow: scroll;
 
+    p {
+      max-width: 450px;
+      overflow-wrap: inherit;
+      overflow-x: wrap;
+    }
+  }
 }
 
 .row {

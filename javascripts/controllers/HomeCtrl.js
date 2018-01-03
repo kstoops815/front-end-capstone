@@ -1,8 +1,6 @@
 "use strict";
 
 app.controller("HomeCtrl", function($location, $scope, AuthService, IncidentsService, IndividualsService){
-	// $scope.oneAtATimeIndividuals = true;
-	// $scope.oneAtATimeIncidents = true;
 	//Individiuals get, add, edit, and delete functions
 	const showIndividuals = () => {
 		IndividualsService.getAllIndividuals(AuthService.getCurrentUid()).then((results) => {
@@ -59,12 +57,8 @@ app.controller("HomeCtrl", function($location, $scope, AuthService, IncidentsSer
 		});
 	};
 
-	$scope.deleteIncident = (incidentId) => {
-		IncidentsService.deleteIncident(incidentId).then(() => {
-			showIncidents();
-		}).catch((error) => {
-			console.log("error in deleteIncident", error);
-		});
+	$scope.getIncidentsForIndividual = (individualId) => {
+		$location.path(`/individuals/details/${individualId}`);
 	};
 
 	$scope.goToAddIncidentForm = () => {
