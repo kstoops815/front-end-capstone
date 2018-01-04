@@ -1,8 +1,9 @@
-@import "_variables";
-
-
 .sectionHeading {
   margin-left: 20px;
+}
+
+.detailsSectionName {
+  text-decoration: underline;
 }
 
 .thumbnail {
@@ -23,7 +24,7 @@
 
 .incidentQuickView {
   @include dropdownStyle;
-  height: 350px;
+  height: 250px;
   padding-left: 2%;
   padding-right: 2%;
   padding-top: 2%;
@@ -35,4 +36,15 @@
     overflow-x: hidden;
     font-size: 16px;
   }
+}
+
+.victimIncident, .offenderIncident {
+  @extend .incidentQuickView;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 325px;
+}
+
+.noData {
+  font-size: 20px;
 }
