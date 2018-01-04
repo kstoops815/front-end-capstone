@@ -1,3 +1,11 @@
+.sectionHeading {
+  margin-left: 20px;
+}
+
+.detailsSectionName {
+  text-decoration: underline;
+}
+
 .thumbnail {
   background-color: $silver;
   height: 360px;
@@ -6,7 +14,6 @@
 
   .name {
     font-size: 25px;
-    
   }
 
   .buttons {
@@ -14,13 +21,13 @@
   }
 }
 
-.individualDemographic {
+.incidentQuickView {
   @include dropdownStyle;
   height: 250px;
   padding-left: 2%;
   padding-right: 2%;
   padding-top: 2%;
-  margin-bottom: 15px;
+  margin-bottom: -15px;
   overflow: scroll;
 
   p {
@@ -30,3 +37,13 @@
   }
 }
 
+.victimIncident, .offenderIncident {
+  @extend .incidentQuickView;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 325px;
+}
+
+.noData {
+  font-size: 20px;
+}
