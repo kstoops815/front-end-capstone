@@ -8,6 +8,7 @@ app.controller("EditIncidentCtrl", function($location, $routeParams, $scope, Aut
 	$scope.offenderName = "";
 	$scope.incidentTime = new Date();
 	$scope.incident = {};
+	$scope.incident.date = new Date();
 
 	const getIncidentInfo = () => {
 		IncidentsService.getSingleIncident($routeParams.id).then((incident) => {
@@ -16,6 +17,7 @@ app.controller("EditIncidentCtrl", function($location, $routeParams, $scope, Aut
 					IndividualsService.getSingleIndividual(incident.data.offenderId).then((offender) => {
 						$scope.offenderName = `${offender.data.firstName} ${offender.data.lastName}`;
 						$scope.incidentTime = new Date(incident.data.time);
+						$scope.incident.date = new Date(incident.data.date);
 					});
 				});
 			$scope.incident = incident.data;

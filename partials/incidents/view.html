@@ -9,8 +9,8 @@
 		<div class="thumbnail text-center">
 			<h4>{{incident.date | DateFilter}}</h4>
 			<div class="buttons">
-					<button class="btn btn-default delete" ng-click="deleteIndividual(individual.id)" data-toggle="tooltip" data-placement="top" title="Delete Individual"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-					<button class="btn btn-default pencil" ng-click="editIndividualInfo(individual.id)" data-toggle="tooltip" data-placement="top" title="Edit Individual"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+					<button class="btn btn-default delete" ng-click="deleteIncident(incident.id)" data-toggle="tooltip" data-placement="top" title="Delete Individual"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+					<button class="btn btn-default pencil" ng-click="editIncidentInfo(incident.id)" data-toggle="tooltip" data-placement="top" title="Edit Individual"><i class="fa fa-pencil" aria-hidden="true"></i></button>
 			</div>
 			<div class="incidentQuickView">
 				<p><strong>Victim:</strong> {{incident.victimName}}</p>
