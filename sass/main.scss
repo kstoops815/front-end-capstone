@@ -24,7 +24,7 @@
   margin-top: -20px;
 }
 
-.sectionHeading {
+.sectionHeading, .detailsSectionName {
   margin-left: 20px;
 }
 
@@ -68,4 +68,28 @@
   .add:hover {
     text-decoration: none;
   }
+}
+
+.formToAddIndividual, .newIncidentForm {
+  padding-left: 540px;
+}
+
+form {
+  margin: 20px;
+
+  .individualFormInput, .newIncidentInput {
+    width: 450px;
+  }
+
+  .formInput {
+    margin-top: 15px;
+  }
+}
+
+.time > table {
+  width: 215px;
+}
+
+.selectedLabel {
+  margin-left: 10px;
 }

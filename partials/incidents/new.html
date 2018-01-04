@@ -1,67 +1,69 @@
-<form>
-  <div>
+<div>
+		<h3 class="sectionHeading text-center">New Incident</h3>
+	</div>
+<form class="newIncidentForm">
+  <div class="formInput">
   	<label for="addIncidentType">Type</label>
   	<div class="btn-group" uib-dropdown on-toggle="toggled(open)">
-      <button id="type-single-button addIncidentType" type="button" class="btn btn-default"  uib-dropdown-toggle ng-disabled="disabled" required>Select One<span class="caret"></span></button>
+      <button id="type-single-button addIncidentType" type="button" class="btn btn-default"  uib-dropdown-toggle ng-disabled="disabled" ng-required="true">Select One<span class="caret"></span></button>
       <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button" >
 	      <li role="menuitem" ng-repeat="t in types"><a ng-click="selectType(t)">{{t}}</a></li>
 	    </ul>
-			<span ng-show="newIncident.type">Type of Incident: {{newIncident.type}}</span>
+			<span class="selectedLabel" ng-show="newIncident.type"><em>Type of Incident:</em> {{newIncident.type}}</span>
 		</div>
 	</div>
-	<div class="col-md-6">
-			<label for="addDate">Date</label>
-			<p class="input-group">
-				<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="newIncident.date" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
-				<span class="input-group-btn">
-					<button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
-				</span>
-			</p>
-		</div>
+	<div class="formInput newIncidentInput">
+		<label for="addDate">Date</label>
+		<p class="input-group">
+			<input type="text" class="form-control newIncidentInput" uib-datepicker-popup="{{format}}" ng-model="newIncident.date" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+			<span class="input-group-btn">
+				<button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+			</span>
+		</p>
 	</div>
-	<div class="form-group">
+	<div class="formInput time">
     <label for="addTime">Time</label>
-		<div uib-timepicker ng-model="incidentTime"></div>
+		<div uib-timepicker ng-model="incidentTime" ng-required="true"></div>
   </div>
-  <div class="form-group">
+  <div class="form-group formInput">
     <label for="addDescription">Description</label>
-    <textarea class="form-control" rows="3" ng-model="newIncident.description">Description</textarea>
+    <textarea class="form-control newIncidentInput" ng-required="true" rows="3" ng-model="newIncident.description">Description</textarea>
   </div>
-  <div>
+  <div class="formInput">
   	<label for="addIncidentAction">Action Taken</label>
   	<div class="btn-group" uib-dropdown on-toggle="toggled(open)">
-      <button id="action-single-button addIncidentAction" type="button" class="btn btn-default"  uib-dropdown-toggle ng-disabled="disabled" required>Select One<span class="caret"></span></button>
+      <button id="action-single-button addIncidentAction" type="button" class="btn btn-default"  uib-dropdown-toggle ng-disabled="disabled" ng-required="true">Select One<span class="caret"></span></button>
       <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button" >
 	      <li role="menuitem" ng-repeat="actionTaken in actionTakens"><a ng-click="selectActionTaken(actionTaken)">{{actionTaken}}</a></li>
 	    </ul>
-			<span ng-show="newIncident.actionTaken">Action Taken: {{newIncident.actionTaken}}</span>
+			<span class="selectedLabel" ng-show="newIncident.actionTaken"><em>Action Taken:</em> {{newIncident.actionTaken}}</span>
 		</div>
   </div>
-  <div class="form-group">
+  <div class="form-group formInput">
     <label for="addActionNotes">Action Notes</label>
-    <textarea class="form-control" rows="3" ng-model="newIncident.actionNotes">Action Notes</textarea>
+    <textarea class="form-control newIncidentInput" ng-required="true" rows="3" ng-model="newIncident.actionNotes">Action Notes</textarea>
 	</div>
-	<div>
+	<div class="formInput">
   	<label for="addVictimName">Victim</label>
   	<div class="btn-group" uib-dropdown on-toggle="toggled(open)">
-      <button id="type-single-button addVictimName" type="button" class="btn btn-default"  uib-dropdown-toggle ng-disabled="disabled" required>Select One<span class="caret"></span></button>
+      <button id="type-single-button addVictimName" type="button" class="btn btn-default"  uib-dropdown-toggle ng-disabled="disabled" ng-required="true">Select One<span class="caret"></span></button>
       <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button" >
 	      <li role="menuitem" ng-repeat="individual in individuals"><a ng-click="selectVictim(individual)">{{individual.firstName}} {{individual.lastName}}</a></li>
 	    </ul>
-			<span>Victim: {{victimName}}</span>
+			<span class="selectedLabel" ng-show="victimName"><em>Victim:</em> {{victimName}}</span>
 		</div>
 	</div>
-	<div>
+	<div class="formInput">
   	<label for="addOffenderName">Offender</label>
   	<div class="btn-group" uib-dropdown on-toggle="toggled(open)">
-      <button id="type-single-button addOffenderName" type="button" class="btn btn-default"  uib-dropdown-toggle ng-disabled="disabled" required>Select One<span class="caret"></span></button>
+      <button id="type-single-button addOffenderName" type="button" class="btn btn-default"  uib-dropdown-toggle ng-disabled="disabled" ng-required="true">Select One<span class="caret"></span></button>
       <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button" >
 	      <li role="menuitem" ng-repeat="individual in individuals"><a ng-click="selectOffender(individual)">{{individual.firstName}} {{individual.lastName}}</a></li>
 	    </ul>
-			<span>Offender: {{offenderName}}</span>
+			<span class="selectedLabel" ng-show="offenderName"><em>Offender:</em> {{offenderName}}</span>
 		</div>
 	</div>
   
   
-  <button type="submit" class="btn btn-default" ng-click="saveNewIncident()">Submit</button>
+  <button type="submit" class="btn btn-default formInput" ng-click="saveNewIncident()">Submit</button>
 </form>
