@@ -19,6 +19,14 @@
 				<button class="btn btn-default info buttons" ng-click="getIncidentsForIndividual(individual.id)" data-toggle="tooltip" data-placement="top" title="See Incidents"><i class="fa fa-info-circle" aria-hidden="true"></i></button>
 			</div>
 		</uib-accordion>
+		<div class="noInfo" ng-if="individuals.length<1">
+			<h3>
+				You are not currently tracking any individuals.
+			</h3>
+			<div class="navButtons">
+					<button class="add" ng-click="goToAddIndividualForm()">Add New Individual</button>	
+			</div>
+		</div>
 	</div>
 	<div class="column incidents">
 		<div>
@@ -44,5 +52,13 @@
 					</div>
 				</div>
 			</uib-accordion>
+			<div class="noInfo" ng-if="incidents.length<1">
+					<h3>
+						You are not currently tracking any incidents.
+					</h3>
+					<div class="navButtons">
+							<button class="add" ng-click="goToAddIncidentForm()">Add New Incident</button>	
+					</div>
+				</div>
 	</div>
 </div>
