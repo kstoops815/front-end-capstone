@@ -3,7 +3,7 @@
 	<div class="navButtons">
 		<button class="add" ng-click="goToAddIndividualForm()">Add New Individual</button>	
 	</div>	
-	<div ng-repeat="individual in individuals" class="col-sm-3 individual">
+	<div ng-repeat="individual in individuals | orderBy : 'firstName'" class="col-sm-3 individual">
 		<div class="thumbnail text-center">
 			<h4 class="name">{{individual.firstName}} {{individual.lastName}}</h4>
 			<div class="buttons">
