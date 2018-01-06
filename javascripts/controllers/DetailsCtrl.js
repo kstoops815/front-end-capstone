@@ -46,5 +46,9 @@ app.controller("DetailsCtrl", function($http, $location, $routeParams, $scope, A
 		$location.path("/individuals");
 	};
 
+	$scope.returnToMyDashboard = () => {
+		$location.path("/home");
+	};
+	
 });
 
